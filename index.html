@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style type="text/css">
+        @import url('./greeting.css');
+    </style>
+</head>
+<body style="display: flex">
+    <div class="Main">
+        <div class="logo">
+            <span>Medicare-bot 001</span>
+            <img src="./pics/logo.png" />
+        </div>
+        <div id="greeting">
+            <div> 
+                <span>안녕하세요, 저희 의료원을 찾아주셔서 감사합니다.</span>
+                <p>아래에서 필요하신 업무를 선택해주세요.</p>
+                
+            </div>
+        </div>
+        <div class="container">
+            <div class="item" >
+                <button  type="button" class="btn btn-primary">일반<br>안내</button> 
+            </div>
+            <div class="item">
+                <button onclick="location.href='checkReserv.html'" type="button" class="btn btn-primary">고객<br>확인</button> 
+            </div>
+        </div>
+        <div class="adv">
+                <img src="./pics/doctor.jpg">
+        </div>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+</body>
+</html>

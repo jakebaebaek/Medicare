@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservation description</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <style type="text/css">
+      @import url("./reservDesc.css");
+    </style>
+    <!-- <script src="./virtualKeyboard.js" ></script> -->
+  </head>
+
+  <body>
+    <div class="logo">
+      <span>Medicare-bot 001</span>
+      <img src="./pics/logo.png" />
+    </div>
+    <div class="form_wrapper">
+      <div class="form_container">
+        <div class="title_container">
+          <h2>예약 내용</h2>
+        </div>
+        <div class="row clearfix">
+          <div class="">
+            <div class="row clearfix">
+              <div class="col_half">
+                <div class="input">
+                  <label type="lastname" name="name"> 성 </label>
+                  <input class='lastname' type="lastname" name="name" disabled />
+                </div>
+              </div>
+              <p></p>
+              <div class="col_half">
+                <div class="input_field">
+                  <label type="fristname" name="'name"> 이름</label>
+                  <input class='fristname' type="fristname" name="name" value="덕배" disabled />
+                </div>
+              </div>
+            </div>
+            <div class="input_field">
+              <label type="number_ID" name="'number_ID"> 주민등록번호 </label>
+              <input
+                id="idNum"
+                class="idNum1"
+                type="number_ID"
+                name="number_ID"
+                value="940321"
+                disabled
+              />
+              <span id="numspan">ㅡ</span>
+              <input
+                id="idNum"
+                class="idNum2"
+                type="number_ID"
+                name="number_ID"
+                value="2147220"
+                disabled
+              />
+            </div>
+            <div>
+              <label type="texts" name="reservNum"> 예약 번호 </label>
+              <input
+                id="idNum"
+                class="reservNum"
+                type="texts"
+                name="reservNum"
+                value="M139207"
+                disabled
+              />
+            </div>
+            <div class="schedule">
+              <h2>진료 일정</h2>
+              <div>
+                <label>진료과</label> <span>신경정신과</span>
+                <label>담당의</label><span>잘고침</span>
+              </div>
+              <div>
+                <label>예약 일시</label> <span>2023-08-08 (화) 13:30</span>
+              </div>
+              <div><label>위치</label> <span>본관 3층 신경정신과</span></div>
+            </div>
+            <div class="schedule">
+              <h2>검사 일정</h2>
+              <div><label>검사명</label> <span>불면증</span></div>
+              <div>
+                <label>검사일정</label> <span>2023-09-08 (금) 14:00</span>
+              </div>
+              <div><label>검사장소</label> <span>본관 B1 생리검사실</span></div>
+            </div>
+            <div class="buttons">
+              <button id="toMain" class="btn btn-primary">종료</button>
+              <button id="openBtn" class="btn btn-primary">신체 측정</button>
+              <button id="openBtn" class="btn btn-primary">상담원 호출</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 모달 창 부분 -->
+      <div class="modal hidden">
+        <div class="bg"></div>
+        <div class="modalBox">
+          <p>로봇 안에 앉아주세요<br />🧘‍♂️</p>
+          <button class="closeBtn">확인</button>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const open = () => {
+        document.querySelector(".modal").classList.remove("hidden");
+        setTimeout(() => (location.href = "counseling.html"), 5500);
+        console.log("open");
+      };
+      const close = () => {
+        document.querySelector(".modal").classList.add("hidden");
+        console.log("close");
+      };
+      const toNext = () => {
+        console.log("동작중");
+        location.href = "counseling.html";
+        console.log("이동 중");
+      };
+      const toMain = () => {
+        console.log("종료눌름");
+        location.href = "index.html";
+      };
+      function get_query() {
+        var url = document.location.href;
+        var qs = url.substring(url.indexOf("?") + 1).split("&");
+        for (var i = 0, result = []; i < qs.length; i++) {
+          qs[i] = qs[i].split("=");
+          result.push(decodeURIComponent(qs[i][1])) 
+        }
+        return result;
+      }
+      var result = get_query();
+      console.log(result)
+      document.getElementById("openBtn").addEventListener("click", (event) => open(event));
+      document.querySelector(".closeBtn").addEventListener("click", toNext);
+      // document.querySelector(".bg").addEventListener("click", close);
+      document.querySelector("#toMain").addEventListener("click", toMain);
+      document.getElementsByClassName('lastname').value = result[0];
+    </script>
+  </body>
+</html>

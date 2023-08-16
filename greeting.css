@@ -1,0 +1,68 @@
+body {
+    overflow: hidden;
+}
+.logo{
+    margin: 30px 30px 20px 30px;
+    height: 80px;
+    display: block;
+    >img {
+        width: 150px;
+        position: absolute;
+        right: 60px;
+    }
+    >span {
+        font-size: 40px;
+        text-align: center;
+        align-items: center;
+        display: inline-flex;
+        margin: 20px 0 0 10px;
+    }
+} 
+#greeting {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 30px 30px 70px 30px;
+    height: 500px;
+    color:rgb(18, 1, 51);
+    border: 2px solid black;
+    font-size: xx-large;
+    font-weight: bold;
+    position: relative;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+}
+.container .item {
+    display: block;
+    text-align: center;
+    width: 500px;
+    height: 500px;
+    margin: 0 30px 20px 30px ;
+}
+.btn {  /* 일반 안내에 들어가는 btn style */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 520px;
+    width: 410px;
+    font-size: 60px;
+    border-radius: 50px;
+    margin-top: -30px;
+}
+.adv {
+    align-items: center;
+    text-align: center;
+    border: 2px solid black;
+    margin: 0 30px 20px 30px;
+    height: 450px;
+    overflow: hidden;
+}
+.adv img {
+    width: 900px;
+    height: 500px;
+}
