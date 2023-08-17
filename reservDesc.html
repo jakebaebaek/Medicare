@@ -13,7 +13,6 @@
     <style type="text/css">
       @import url("./reservDesc.css");
     </style>
-    <!-- <script src="./virtualKeyboard.js" ></script> -->
   </head>
 
   <body>
@@ -39,7 +38,7 @@
               <div class="col_half">
                 <div class="input_field">
                   <label type="fristname" name="'name"> 이름</label>
-                  <input class='fristname' type="fristname" name="name" value="덕배" disabled />
+                  <input class='fristname' type="fristname" name="name" disabled />
                 </div>
               </div>
             </div>
@@ -96,7 +95,7 @@
             <div class="buttons">
               <button id="toMain" class="btn btn-primary">종료</button>
               <button id="openBtn" class="btn btn-primary">신체 측정</button>
-              <button id="openBtn" class="btn btn-primary">상담원 호출</button>
+              <button id="call" class="btn btn-primary">상담원 호출</button>
             </div>
           </div>
         </div>
@@ -107,6 +106,18 @@
         <div class="modalBox">
           <p>로봇 안에 앉아주세요<br />🧘‍♂️</p>
           <button class="closeBtn">확인</button>
+        </div>
+      </div>
+      <div class="modal2 hidden">
+        <div class="bg"></div>
+        <div class="modalBox">
+          <p>상담원 호출 중입니다.<br />
+            <div class="text-center">
+              <div class="spinner-border" role="status">
+                <span class="sr-only"></span>
+              </div>
+            </div>
+          </p>
         </div>
       </div>
     </div>
@@ -121,17 +132,23 @@
         setTimeout(() => (location.href = "counseling.html"), 5500);
         console.log("open");
       };
+      const open2 = () => {
+        document.querySelector(".modal2").classList.remove("hidden");
+        setTimeout(() => (document.querySelector(".modal2").classList.add("fade")), 3000);
+        setTimeout(() => (document.querySelector(".modal2").classList.add("hidden")), 3220);
+        setTimeout(() => (document.querySelector(".modal2").classList.remove("fade")), 3220);
+
+        console.log("open");
+      };
+
       const close = () => {
         document.querySelector(".modal").classList.add("hidden");
         console.log("close");
       };
       const toNext = () => {
-        console.log("동작중");
         location.href = "counseling.html";
-        console.log("이동 중");
       };
       const toMain = () => {
-        console.log("종료눌름");
         location.href = "index.html";
       };
       function get_query() {
@@ -146,10 +163,22 @@
       var result = get_query();
       console.log(result)
       document.getElementById("openBtn").addEventListener("click", (event) => open(event));
+      document.getElementById("call").addEventListener("click", (event) => open2(event));
       document.querySelector(".closeBtn").addEventListener("click", toNext);
-      // document.querySelector(".bg").addEventListener("click", close);
       document.querySelector("#toMain").addEventListener("click", toMain);
-      document.getElementsByClassName('lastname').value = result[0];
+      // document.querySelector(".bg").addEventListener("click", close);
+      const lastname = result[0];
+      const fristname = result[1];
+      const num_id = result[2];
+      const num_idl = result[3];
+      const cusNum = result[4];
+      console.log(lastname, fristname, num_id, num_idl, cusNum)
+      let input_name = document.querySelector('.lastname').setAttribute("value", lastname);
+      let input_firstname = document.querySelector('.fristname').setAttribute("value", fristname);
+      let numid1 = document.querySelector('.idNum1').setAttribute('value', num_id);
+      let numid2 = document.querySelector('.idNum2').setAttribute('value', num_idl);
+      let customer = document.querySelector('.reservNum').setAttribute('value', cusNum)
+
     </script>
   </body>
 </html>

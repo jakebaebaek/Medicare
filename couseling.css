@@ -1,6 +1,6 @@
 body {
     width: auto;
-    height: 1400px;
+    height: 100%;
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -9,13 +9,14 @@ body {
 .wrapper {
     position: absolute;
     width:90%;
+    height: 1550px;
     max-width: 100%;
-    max-height: 100%;
+    max-height: 110%;
 
 }
 .text {
-    margin-top: 30px;
-    height: 1470px;
+    margin-top: 50px;
+    height: 1550px;
 
 }
 p {

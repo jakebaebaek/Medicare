@@ -89,16 +89,16 @@ h2 {
     width: 2rem;
     
 }
-button {
-    position: absolute;
-    justify-content: center;
+.btns {
+	display: flex;
+	position: relative;
+	top: 180px;
+	justify-content: center;
     align-items: center;
-    width: 10rem;
-    height: 5rem;
-    left: 22rem;
-    right:22rem;
-    bottom: 5rem;
-	
+}
+.btn {
+    width: 12rem;
+    height: 6rem;
 }
 @keyframes expand { 
 	0% { -webkit-transform:  scale(1,1); transform:  scale(1,1);  opacity:0; }

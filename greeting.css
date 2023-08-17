@@ -2,13 +2,13 @@ body {
     overflow: hidden;
 }
 .logo{
-    margin: 30px 30px 20px 30px;
+    margin: 30px 50px 20px 30px;
     height: 80px;
     display: block;
     >img {
         width: 150px;
         position: absolute;
-        right: 60px;
+        right: 80px;
     }
     >span {
         font-size: 40px;
@@ -23,7 +23,8 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin: 30px 30px 70px 30px;
+    margin: 30px 1% 70px 30px;
+    width: 100%;
     height: 500px;
     color:rgb(18, 1, 51);
     border: 2px solid black;
@@ -34,6 +35,8 @@ body {
 .container {
     display: flex;
     flex-direction: row;
+    width: 100%;
+
     justify-content: space-around;
     align-items: stretch;
 }
@@ -42,7 +45,7 @@ body {
     text-align: center;
     width: 500px;
     height: 500px;
-    margin: 0 30px 20px 30px ;
+    margin: 0 30px 20px 10% ;
 }
 .btn {  /* 일반 안내에 들어가는 btn style */
     display: flex;
@@ -59,10 +62,11 @@ body {
     text-align: center;
     border: 2px solid black;
     margin: 0 30px 20px 30px;
-    height: 450px;
+    width: 100% ;
+    height: 550px;
     overflow: hidden;
 }
 .adv img {
-    width: 900px;
-    height: 500px;
+    width: 100%;
+    height: 600px;
 }
