@@ -1,0 +1,126 @@
+
+body {
+	font-size: 14px;
+	background: #f2f2f2;
+    height: 52rem
+}
+.logo{
+    margin: 30px 30px 0 30px;
+    height: 60px;
+    display: block;
+    >img {
+        width: 150px;
+        position: absolute;
+        right: 60px;
+    }
+    >span {
+        font-size: 40px;
+        display: inline-block;
+        margin: 20px 0 0 30px;
+		width: 500px;
+    }
+}
+span {
+    font-size: large;
+    width: 1rem;
+}
+.form_wrapper {
+	background: #fff;
+	width: 90%;
+    height: 95%;
+    max-height: 100%;
+	max-width: 100%;
+	padding: 15px;
+	margin:  3% auto 0;
+	border: 5px solid rgba(47, 100, 247, 0.86);
+    border-radius: 20px;
+    animation: expand 0.5s linear forwards;
+}
+	.title_container {
+        position:relative;
+		padding-bottom: 15px;
+	}
+    label {
+        display: inline-block;
+        font-size: 30px;
+        width: 15rem;
+        padding-left: 2rem;
+    }
+	.row {
+		margin: 10px -15px;
+		>div {
+			padding: 0 15px;
+			box-sizing: border-box;
+		}
+	}
+	.col_half {
+		width: 50%;
+
+	}
+	.input_field {
+		position: relative;
+		margin-bottom: 20px;
+	}
+	input {
+        height: 50px;
+        border-radius: 10px;
+        font-size: x-large;
+        width: 10rem;
+    }
+
+h2 {
+    justify-content: center;
+    color: black;
+    text-align: center;
+    font-size: 40px;
+    line-height: 150px;
+    margin: 0;
+}
+.infocheck {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+.btns {
+	display: flex;
+	position: relative;
+	top: 20px;
+	justify-content: center;
+    align-items: center;
+}
+.btn {
+    width: 15rem;
+    height: 7rem;
+    margin: 15px 20px 0 20px;
+	border-radius: 20px;
+}
+@keyframes expand { 
+	0% { -webkit-transform:  scale(1,1); transform:  scale(1,1);  opacity:0; }
+	25% { -webkit-transform:  scale(1,1); transform:  scale(1,1); }
+	50% { -webkit-transform:  scale(1,1); transform:  scale(1,1); }
+	75% { -webkit-transform:  scale(1,1); transform:  scale(1,1); }
+	100% { -webkit-transform:  scale(1,1); transform:  scale(1,1);  opacity:1; }
+}
+
+@media (max-width: 600px) {
+	.form_wrapper {
+		.col_half {
+			width: 100%;
+			float: none;
+		}
+	}
+	.bottom_row {
+		.col_half {
+			width: 50%;
+			float: left;
+		}
+	}
+	.form_container {
+		.row {
+			.col_half.last {
+				border-left: none;
+			}
+		}
+	}
+}

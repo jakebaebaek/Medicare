@@ -1,99 +1,23 @@
-body {
-    overflow: hidden;
-}
-
-.form_wrapper {
-    margin: 30px 15px 0 15px;
-}
-
-.pic_container {
+.beforeCheck {
     display: flex;
-    width: auto;
-    justify-content: center;
-
-}
-.pic_container img {
-    width: 500px;
-    height: 647px; 
-    cursor: default;
-}
-.pic_container span {
-    position: relative;
-    width: 500px;
-    height: 650px;
-    border: 2px solid black;
-}
-.pic_container span p {
-    margin: 40px 20px 4px 20px;
-    padding: 5px 5px 5px 5px;
-    display: flex;
-    flex-direction: column;
-    width: auto;
-    height: auto;
-	box-shadow:inset 0px -1px 11px -15px #ffffff;
-	background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
-	background-color:#ededed;
-	border-radius:32px;
-	color:#383636de;
-	font-family:Arial;
-	font-size:20px;
-	font-weight:bold;
-	padding:15px 40px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #ffffff;
-    
-}
-h1 {
-    display: block;
-    margin: 5rem 2rem 2rem 5rem;
-    font-size: 50px;
-}
-.patientINFO input {
-    width: 15rem;
-    height: 3rem;
-    font-size: 30px;
-}
-label {
-    display: inline-block;
-    font-size: 35px;
-    width: 20rem;
-    margin : 1rem 1rem 1rem 5rem;
-}
-.buttons {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     align-content: space-around;
-}
-.buttons button {
-    border: 1px solid blue;
-    border-radius: 10px;
-    background-color: rgb(56, 56, 255);
-    color: #ffffff;
-    width: 270px;
-    height: 90px;
-    font-family:Arial;
-    font-size: 30px;
-    margin: 3rem 1rem 2rem 1rem;
-}
-.schedule div {
-    display: flex;
-    align-items: center;
-    margin: 0 0 0 5rem;
-}
-.schedule label {
-    flex-direction: row;
-    width: 5rem;
-}
-.schedule span {
-    width: 15rem;
-    font-size: 25px;
+            >button {
+                border: 1px solid blue;
+                border-radius: 50px;
+                background-color: rgb(56, 56, 255);
+                color: #ffffff; 
+                font-family:Arial;
+                font-size: 50px;
+                margin: 50% 1rem 2rem 1rem;
+                width: 500px;
+                height: 500px;
+            }
 }
 /* 모달 창 css */
 
-  .modal {
+.modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -167,16 +91,16 @@ label {
   padding: 25px;
   text-align: center;
   > label {
-    margin-top: 100px;
+    margin-top: 40px;
     align-items: center;
     justify-content: center;
-    width: 180px;
+    width: 140px;
     height: 100px;
     
   }
 }
 .container h2 {
-  margin-top: 40px;
+  margin-top: 100px;
   font-size: xx-large;
 }
 
@@ -317,12 +241,3 @@ input[type=checkbox]:checked + .check-box::before,
   -webkit-animation: dothatopcheck 0.4s ease 0s forwards;
   animation: dothatopcheck 0.4s ease 0s forwards;
 }
-#pressure {
-    width: 100px;
-    height: 100px;
-}
-.start-measure img {
-    width: 120px;
-    height: 120px;
-}
-
