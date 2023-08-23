@@ -9,30 +9,29 @@
         @import url('./greeting.css');
     </style>
 </head>
-<body style="display: flex">
+<body>
     <div class="Main">
         <div class="logo">
             <span>Medicare-bot 001</span>
             <img src="./pics/logo.png" />
         </div>
         <div id="greeting">
-            <div> 
-                <span>Thank you for the visiting our clinic.</span>
-                <p>Please select the job you need below.</p>
-                
+            <div class="flow-text"> 
+                <span >Thank you for the visiting our clinic.<br/>
+                Please select the job you need below.</span>
             </div>
         </div>
         <div class="container">
             <div class="item" >
                 <button type="button" class="btn btn-primary">
-                    <div class="icon">🏥</div>
                     <div>General<br>Information</div>
+                    <div class="icon">🏥</div>
                 </button> 
             </div>
             <div class="item">
                 <button onclick="location.href='checkReserv.html'" type="button" class="btn btn-primary">
-                    <div class="icon">👩‍⚕️</div>
                     <div>Check<br>Appointment</div>
+                    <div class="icon">👩‍⚕️</div>
                 </button> 
             </div>
         </div>
@@ -40,8 +39,7 @@
                 <img src="./pics/doctor.jpg">
         </div>
     </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 </body>
 </html>

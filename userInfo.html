@@ -24,7 +24,7 @@
             </div>
             <div class="row clearfix">
                 <div class="">
-                    <form action="vital.html"> 
+                    <form action="vital.html">
                         <div class="row clearfix">
                             <div class="col_half">
                                 <div class="input">
@@ -50,8 +50,7 @@
                         </div>
                         <div class="reservNum">
                             <label type="texts" name="reservNum"> Patient Number </label>
-                            <input type="text" name="'reservNum" maxlength="15" value="M330"
-                                disabled required />
+                            <input type="text" name="'reservNum" maxlength="15" value="M330" disabled required />
                         </div>
                         <div class="infocheck">
                             <label style="width: auto;" for="cb2">Does the above information match yours?</label>
@@ -73,18 +72,22 @@
         }
         const inputs = document.querySelectorAll('input');
         const noBtn = document.querySelector('#no')
-        noBtn.addEventListener('click', (event)=> {
-                document.querySelectorAll('input').forEach((e) => e.disabled=false);
-                document.querySelectorAll('input').forEach((e) => e.value="");
-                document.querySelectorAll('.btn').forEach((e) => e.style.display='none');
-                const submitBtn = document.createElement('button');
-                submitBtn.setAttribute('class', 'btn btn-primary');
-                submitBtn.setAttribute('style','font-size:25px;')
-                submitBtn.innerHTML = '확인'
-                document.querySelector('.infocheck label').innerHTML='Please wirte down your information'
-                document.querySelector('.btns').appendChild(submitBtn);
-            }
+        noBtn.addEventListener('click', (event) => {
+            document.querySelectorAll('input').forEach((e) => e.disabled = false);
+            document.querySelectorAll('input').forEach((e) => e.value = "");
+            document.querySelectorAll('.btn').forEach((e) => e.style.display = 'none');
+            const submitBtn = document.createElement('button');
+            submitBtn.setAttribute('class', 'btn btn-primary');
+            submitBtn.setAttribute('style', 'font-size:25px;')
+            submitBtn.innerHTML = 'Submit'
+            document.querySelector('.infocheck label').innerHTML = 'Please wirte down your information'
+            document.querySelector('.btns').appendChild(submitBtn);
+        }
         )
+        const input = document.querySelectorAll('input');
+        input.forEach((e) => {
+            e.setAttribute('autocomplete', 'off');
+        })
 
     </script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"

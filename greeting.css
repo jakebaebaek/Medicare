@@ -1,8 +1,11 @@
 body {
     overflow: hidden;
+    font-weight: 1000;
+    width: 100%;
 }
 .main {
     justify-content: center;
+    width: 98%;
 }
 .logo{
     margin: 30px 50px 20px 30px;
@@ -11,7 +14,7 @@ body {
     >img {
         width: 150px;
         position: absolute;
-        right: 80px;
+        right: 60px;
     }
     >span {
         font-size: 40px;
@@ -22,33 +25,48 @@ body {
     }
 } 
 #greeting {
-    display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin: 30px 1% 70px 30px;
-    width: 100%;
+    margin: 30px 30px 70px 30px;
+    width: auto;
+    max-width: 95%;
     height: 500px;
     color:rgb(18, 1, 51);
     border: 2px solid black;
-    font-size: 50px;
-    font-weight: bold;
+    border-radius: 20px;
+    font-size: 100px;
+    font-weight: bolder;
     position: relative;
+    overflow: hidden;
 }
-.container {
+.flow-text {
+    margin-top: 10%;
+    white-space: nowrap; /* Prevent line breaks */
+    position: relative; /* Required for animation */
+    animation: flowAnimation 10s linear infinite; /* Apply animation */
+}@keyframes flowAnimation {
+    0% {
+        left: 100%; /* Start from right edge */
+    }
+    100% {
+        left: -200%; /* Move to left edge */
+    }
+}.container {
     display: flex;
     flex-direction: row;
-    width: 100%;
-
-    justify-content: space-around;
-    align-items: stretch;
+    width: auto;
+    max-width: 95%;
+    justify-content: center;
+    align-items: center;
 }
 .container .item {
+    justify-content: center;
     display: block;
     text-align: center;
     width: 500px;
     height: 500px;
-    margin: 0 30px 20px 10% ;
+    margin: 0 30px 20px 30px;
         > button {
             display: flex;
             flex-direction: column;
@@ -66,16 +84,17 @@ body {
     margin-top: -30px; 
 }
 .icon {
-    font-size: 90px;
+    font-size: 150px;
 }
 .adv {
     align-items: center;
     text-align: center;
     border: 2px solid black;
     margin: 0 30px 20px 30px;
-    width: 100% ;
+    width: 95% ;
     height: 550px;
     overflow: hidden;
+    justify-content: center;
 }
 .adv img {
     width: 100%;
