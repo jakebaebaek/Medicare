@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Check Reservation</title>
+    <title>Check Appointment</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <style type="text/css">
       @import url("./checkReserv.css");
@@ -22,7 +22,7 @@
         action="reservDesc.html"
       >
         <div class="title_container">
-          <h2>예약 확인</h2>
+          <h2>Appointment Confirmation</h2>
         </div>
         <div class="row clearfix">
           <div class="">
@@ -30,35 +30,35 @@
               <div class="row clearfix">
                 <div class="col_half">
                   <div class="input">
-                    <label type="lastname" name="'name"> 성 </label>
+                    <label type="lastname" name="'name"> Last name </label>
                     <input
                       type="lastname"
                       name="name"
-                      placeholder="김"
+                      placeholder="KIM"
                       required
                     />
                   </div>
                 </div><p></p> 
                 <div class="col_half">
                   <div class="input_field">
-                    <label type="fristname" name="'name"> 이름</label>
+                    <label type="fristname" name="'name"> Frist name</label>
                     <input
                       type="fristname"
                       name="name"
-                      placeholder="덕배"
+                      placeholder="Deokbae"
                       required
                     />
                   </div>
                 </div>
               </div>
               <div class="input_field">
-                <label type="number_ID" name="'number_ID"> 주민등록번호 </label>
+                <label type="number_ID" name="'number_ID"> ID number </label>
                 <input type="text" name="'number_ID" oninput="inputNumberOnly(this)" maxlength="6" required/>
                 <span>ㅡ</span>
                 <input type="text" name="'number_ID" oninput="inputNumberOnly(this)" maxlength="7" required/>
               </div>
               <div>
-                <label type="texts" name="reservNum"> 회원 번호 </label>
+                <label type="texts" name="reservNum"> Patient number </label>
                 <input 
                   type="text" 
                   name="'reservNum" 
@@ -69,7 +69,7 @@
               </div>
               <div class="input_field checkbox_option">
                 <input type="checkbox" id="agree" required/>
-                <label style="width: auto;" for="cb2">개인정보 제공에 동의합니다.</label>
+                <label style="width: auto;" for="cb2">Agree to provide personal information.</label>
               </div>
               <div class="btns">
                 <button style="width: 150px; height: 6rem; font-size: x-large;" class="btn btn-primary"> 확인 </button> 

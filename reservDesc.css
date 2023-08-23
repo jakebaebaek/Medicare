@@ -20,21 +20,17 @@ body {
   }
 }
 
-span {
+.schedule span {
   font-size: 30px;
   font-weight: bold;
-  width: 1rem;
-  margin-right: 100px;
+  width: 5rem;
 }
 #numspan {
   margin: 0;
   font-weight: bold;
 }
-#idNum {
-  text-align: center;
-}
 .schedule {
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 .form_wrapper {
   background: #fff;
@@ -49,10 +45,15 @@ span {
   animation: expand 0.5s linear forwards;
 }
 label {
+  font-size: 30px;
+  width: 15rem;
+  margin: 2px 0 2px 20px;
+}
+.schedule label {
   display: inline-block;
   font-size: 30px;
-  width: 12rem;
-  padding-left: 2rem;
+  width: 22rem;
+  margin: 2px 0 2px 20px;
 }
 .row {
   margin: 10px -15px;
@@ -73,8 +74,11 @@ input {
   border-radius: 10px;
   font-size: x-large;
   width: 10rem;
+  padding-left: 15px;
 }
-
+.reservNum {
+  width: 21.6rem;
+}
 h2 {
   justify-content: center;
   color: black;
@@ -82,22 +86,7 @@ h2 {
   font-size: 40px;
   line-height: 150px;
   margin: 0;
-}
-body
-  > div
-  > div
-  > div.row.clearfix
-  > div
-  > form
-  > div.input_field.checkbox_option {
-  bottom: 50px;
-  position: absolute;
-}
-.checkbox_option {
-  display: inline-block;
-  right: 30px;
-  margin-bottom: 10rem;
-  display: flex;
+  height: auto;
 }
 .buttons {
   display: flex;

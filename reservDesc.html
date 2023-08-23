@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reservation description</title>
+    <title>Appointment description</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -23,27 +23,26 @@
     <div class="form_wrapper">
       <div class="form_container">
         <div class="title_container">
-          <h2>예약 내용</h2>
+          <h2>Appointment description</h2>
         </div>
         <div class="row clearfix">
-          <div class="">
             <div class="row clearfix">
               <div class="col_half">
                 <div class="input">
-                  <label type="lastname" name="name"> 성 </label>
+                  <label type="lastname" name="name"> Last name </label>
                   <input class='lastname' type="lastname" name="name" disabled />
                 </div>
               </div>
               <p></p>
               <div class="col_half">
                 <div class="input_field">
-                  <label type="fristname" name="'name"> 이름</label>
+                  <label type="fristname" name="'name"> First name</label>
                   <input class='fristname' type="fristname" name="name" disabled />
                 </div>
               </div>
             </div>
             <div class="input_field">
-              <label type="number_ID" name="'number_ID"> 주민등록번호 </label>
+              <label type="number_ID" name="'number_ID"> ID number </label>
               <input
                 id="idNum"
                 class="idNum1"
@@ -63,7 +62,7 @@
               />
             </div>
             <div>
-              <label type="texts" name="reservNum"> 예약 번호 </label>
+              <label type="texts" name="reservNum"> Patient Number </label>
               <input
                 id="idNum"
                 class="reservNum"
@@ -74,44 +73,41 @@
               />
             </div>
             <div class="schedule">
-              <h2>진료 일정</h2>
-              <div>
-                <label>진료과</label> <span>신경정신과</span>
-                <label>담당의</label><span>잘고침</span>
+              <h2>Consultation Schedule</h2>
+              <div class="consult">
+                <label>Department</label> <span>Neuropsychiatry</span><br>
+                <label>Doctor</label> <span>Mr.fixwell</span><br>
+                <label>Appointment date</label> <span>2023-08-08 (Tue) 13:30</span><br>
+                <label>Location</label> <span>Main/3rd floor/Neuropsychiatry</span><br>
               </div>
-              <div>
-                <label>예약 일시</label> <span>2023-08-08 (화) 13:30</span>
-              </div>
-              <div><label>위치</label> <span>본관 3층 신경정신과</span></div>
             </div>
             <div class="schedule">
-              <h2>검사 일정</h2>
-              <div><label>검사명</label> <span>불면증</span></div>
+              <h2>Diagnosis Schedule</h2>
               <div>
-                <label>검사일정</label> <span>2023-09-08 (금) 14:00</span>
+                <label>Checkup for</label> <span>Insomnia</span><br>
+                <label>Diagnosis date</label> <span>2023-09-08 (Fri) 14:00</span><br>
+                <label>Location</label> <span>Main/B1/EEG lab</span><br>
               </div>
-              <div><label>검사장소</label> <span>본관 B1 생리검사실</span></div>
             </div>
             <div class="buttons">
-              <button id="toMain" class="btn btn-primary">종료</button>
-              <button id="openBtn" class="btn btn-primary">신체 측정</button>
-              <button id="call" class="btn btn-primary">상담원 호출</button>
+              <button id="toMain" class="btn btn-primary">Main page</button>
+              <button id="openBtn" class="btn btn-primary">Measures</button>
+              <button id="call" class="btn btn-primary">need help?</button>
             </div>
           </div>
-        </div>
       </div>
       <!-- 모달 창 부분 -->
       <div class="modal hidden">
         <div class="bg"></div>
         <div class="modalBox">
-          <p>로봇 안에 앉아주세요<br />🧘‍♂️</p>
-          <button class="closeBtn">확인</button>
+          <p>Please sit down in the robot<br />🧘‍♂️</p>
+          <button class="closeBtn">sure</button>
         </div>
       </div>
       <div class="modal2 hidden">
         <div class="bg"></div>
         <div class="modalBox">
-          <p>상담원 호출 중입니다.<br />
+          <p>Connecting with hospital receptionist.<br />Please wait for a moment.
             <div class="text-center">
               <div class="spinner-border" role="status">
                 <span class="sr-only"></span>

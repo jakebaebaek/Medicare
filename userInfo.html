@@ -20,7 +20,7 @@
     <div class="form_wrapper">
         <div class="form_container">
             <div class="title_container">
-                <h2>환자 확인</h2>
+                <h2>Identity</h2>
             </div>
             <div class="row clearfix">
                 <div class="">
@@ -28,38 +28,38 @@
                         <div class="row clearfix">
                             <div class="col_half">
                                 <div class="input">
-                                    <label type="lastname" name="'name"> 성 </label>
-                                    <input type="lastname" name="name" value="김" disabled required />
+                                    <label type="lastname" name="'name"> Last name </label>
+                                    <input type="lastname" name="name" value="KIM" disabled required />
                                 </div>
                             </div>
                             <p></p>
                             <div class="col_half">
                                 <div class="input_field">
-                                    <label type="fristname" name="'name"> 이름</label>
-                                    <input type="fristname" name="name" value="덕배" disabled required />
+                                    <label type="fristname" name="'name"> First name</label>
+                                    <input type="fristname" name="name" value="Deokbae" disabled required />
                                 </div>
                             </div>
                         </div>
                         <div class="input_field">
-                            <label type="number_ID" name="'number_ID"> 주민등록번호 </label>
+                            <label type="number_ID" name="'number_ID"> ID number </label>
                             <input type="text" name="'number_ID" oninput="inputNumberOnly(this)" maxlength="6"
                                 value="940321" disabled required />
                             <span>ㅡ</span>
                             <input type="text" name="'number_ID" oninput="inputNumberOnly(this)" maxlength="7"
                                 value="2147220" disabled required />
                         </div>
-                        <div>
-                            <label type="texts" name="reservNum"> 회원 번호 </label>
-                            <input type="text" name="'reservNum" maxlength="15" style="width: 21.8rem;" value="M330"
+                        <div class="reservNum">
+                            <label type="texts" name="reservNum"> Patient Number </label>
+                            <input type="text" name="'reservNum" maxlength="15" value="M330"
                                 disabled required />
                         </div>
                         <div class="infocheck">
-                            <label style="width: auto;" for="cb2">위의 정보가 본인과 일치합니까?</label>
+                            <label style="width: auto;" for="cb2">Does the above information match yours?</label>
                         </div>
                         <div class="btns">
-                            <button id="yes" style=" font-size: x-large;" class="btn btn-primary"> 네 <br>(신체측정)
+                            <button id="yes" style=" font-size: x-large;" class="btn btn-primary"> Yes <br>(Measures)
                             </button>
-                            <button id="no" style=" font-size: x-large;" class="btn btn-primary"> 아니오<br> (직접입력)
+                            <button id="no" style=" font-size: x-large;" class="btn btn-primary"> No <br> (Direct input)
                             </button>
                         </div>
                     </form>
@@ -81,7 +81,7 @@
                 submitBtn.setAttribute('class', 'btn btn-primary');
                 submitBtn.setAttribute('style','font-size:25px;')
                 submitBtn.innerHTML = '확인'
-                document.querySelector('.infocheck label').innerHTML='환자의 정보를 기입해주세요.'
+                document.querySelector('.infocheck label').innerHTML='Please wirte down your information'
                 document.querySelector('.btns').appendChild(submitBtn);
             }
         )

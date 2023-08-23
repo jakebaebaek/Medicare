@@ -19,48 +19,52 @@
             <span class="aftercheck"><img src="pics/chatDoctor.jpg"></span>
             <span class="aftercheck">
                 <p>
-                    오랜만의 재방문이시네요,<br> 6개월 만입니다.
+                    This is a revisit after 6 months.<br>
                 </p>
-                <p>요즘에 다시 잠을 잘 못잔다고 하시니<br>
-                    밤에 더 잠들 수 있게 약의 용량을 늘리겠습니다.</p>
+                <p>I heard that you've been having trouble sleeping again recently,<br>
+                    so I will increase the dosage of the medication to help you sleep better at night.</p>
                 <p>
-                    약은 꼭 식사 후에 드시고,<br> 점심에 잠을 깨우는 약은 거르시면 안됩니다.
+                    Please make sure to take the medication after a meal,<br>  
+                    and do not skip the medication that wakes you up at lunchtime.
                 </p>
             </span>
         </div>
         <!-- 환자확인란 -->
         <div class="patientINFO">
             <div class="aftercheck">
-                <h1>환자확인</h1>
-                <p></p>
-                <div class="patientName">
+                <hr></hr>
+                <h1></h1>
+                <button id="modal"> Need help?</button>
+                <hr id="bthr"></hr>
+                <!-- <div class="patientName">
                     <label type="name" name="'name"> 성명 </label>
                     <input style="text-align: center;" type="name" name="name" value="김덕배" disabled />
-                </div>
-                <div class="number_ID">
+                </div> -->
+                <!-- <div class="number_ID">
                     <label type="number_ID" name="'number_ID"> 주민등록번호 </label>
                     <input style="text-align: center;" type="text" name="'number_ID" maxlength="6" disabled
                         value="940321" />
                     <span>ㅡ</span>
                     <input style="text-align: center;" type="text" name="'number_ID" maxlength="7" disabled
                         value="2147220" />
+                </div> -->
+            </div>
+            <!-- 측정값이 페인팅 되는 부분 -->
+            <div class="schedule aftercheck">
+                <h1>Measured Values</h1>
+                <div>
+                    <label>Blood pressure</label> <span id="BP">N/A mmHg</span>
+                    <label>Pulse</label><span id="BPM">N/A BPM</span>
                 </div>
-                <div class="buttons">
-                    <button id="measure">측정시작</button>
-                    <button id="modal">도우미 호출</button>
+                <div>
+                    <label>Temperature</label> <span id='TEMP'>N/A °C</span>
+                    <label>Weight</label> <span id='WEIGHT'>N/A kg</span>
                 </div>
             </div>
-            <!-- 측정값이 출력되는 코드 -->
-            <div class="schedule aftercheck">
-                <h1>측정값</h1>
-                <div>
-                    <label>혈압</label> <span>100-140mmHg</span>
-                    <label>맥박</label><span>85회/분</span>
-                </div>
-                <div>
-                    <label>체온</label> <span>36.5°C</span>
-                    <label>체중</label> <span>75kg</span>
-                </div>
+            <div class="buttons">
+                <button id="measure" class="bfBtn">Measuring</button>
+                <button class="sendVal"> Send values<br> to clinic </button>
+                <button class="toMainpage"> Main page </button>
             </div>
         </div>
         <!-- 메시지 모달 창 -->
@@ -68,23 +72,50 @@
         <div class="modal hidden">
             <div class="bg"></div>
             <div class="modalBox">
-                <p>잠시만 기다려주세요.<br>도우미가 오고 있습니다.</p>
+                <p>Connecting with hospital receptionist.<br>Please wait for a moment.</p>
             </div>
         </div>
         <!-- 측정시작 모달 -->
         <div class=" modal start-measure hidden">
             <div class="bg"></div>
             <div class="text-center modalBox">
-                <p>온도를 측정합니다. <br>등을 기대 앉아주세요.</p>
-                <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                <h1>Temperature checks.</h1> <br><p>Please sit leaning against the backrest.</p>
+                <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100">
                     <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 1%"></div>
                 </div>
-                <div class="spinner-border hidden" role="status">
+            </div>
+        </div>
+        <!-- 진료소에 값 보내는 모달창 -->
+        <div class=" modal sendValue hidden">
+            <div class="bg"></div>
+            <div class="text-center modalBox">
+                <h1>We are sending the measured values to the clinic.</h1> <br><p></p>
+                <div class="spinner-border" role="status">
                     <span class="sr-only"></span>
                 </div>
             </div>
         </div>
+
         <script>
+            //파라미터 가져오기
+            function get_query() {
+                var url = document.location.href;
+                var qs = url.substring(url.indexOf("?") + 1).split("&");
+                for (var i = 0, result = []; i < qs.length; i++) {
+                    qs[i] = qs[i].split("=");
+                    result.push(decodeURIComponent(qs[i][1]))
+                }
+                return result;
+            }
+            var result = get_query();
+            const lastname = result[0];
+            const fristname = result[1];
+
+            console.log(result);
+            const h1 = document.querySelector('.aftercheck h1');
+            result.length < 2 ? h1.innerHTML='Nice to meet you Jacob😊' :  h1.innerHTML = `Nice to meet you ${lastname+fristname}😊`;
+
             //도우미 호출 스크립트
             const open = () => {
                 const callHelper = document.querySelector('.modal');
@@ -93,34 +124,86 @@
                 console.log('open')
             }
             const callHelp = (callHelper) => {
-                setTimeout(() => callHelper.classList.add('fade'),4800);
-                setTimeout(() => callHelper.classList.remove('fade'),5200);
+                setTimeout(() => callHelper.classList.add('fade'), 4800);
+                setTimeout(() => callHelper.classList.remove('fade'), 5200);
                 setTimeout(() => close(), 5200);
             }
             const close = () => {
                 document.querySelector(".modal").classList.add("hidden");
                 console.log('close')
-            }            
+            }
             //측정시작 스크립트
             const startMeasure = () => {
                 const barGuage = document.querySelector('.progress-bar');
                 document.querySelector(".start-measure").classList.remove("hidden");
-                const innerText = document.querySelector('.text-center p');
-                barGuage.attributes.style.value = 'width:25%'
+                const innerP = document.querySelector('.text-center p');
+                const innerH1 = document.querySelector('.modalBox h1');
+                setTimeout(() => barGuage.attributes.style.value = 'width:25%', 200)
                 setTimeout(() => {
-                    innerText.innerHTML=`무게를 측정합니다.`
-                    const br = document.createElement('br');
-                    const span = document.createElement('span');
-                    innerText.appendChild(br)
-                    innerText.appendChild(span);
-                    span.innerHTML='앉은 채로 지면에서 발을 떼주세요.'
+                    innerH1.innerHTML = `Take weight.`
+                    innerP.innerHTML = 'Please take your feet off the ground while seated.'
                     barGuage.attributes.style.value = 'width:50%'
-                    console.log(barGuage.attributes.style.value)
-                },4500 );
+                }, 4500);
+                setTimeout(() => {
+                    innerH1.innerHTML = 'Take blood pressure.'
+                    innerP.innerHTML = 'Please put your arm on the blood pressure monitor.'
+                    barGuage.attributes.style.value = 'width:75%'
+                }, 8500);
+                setTimeout(() => barGuage.attributes.style.value = 'width:100%', 12000);
+                setTimeout(() => document.querySelector('.progress').classList.add('hidden'), 14000);
+                setTimeout(() => {
+                    innerH1.innerHTML = 'All measurements are complete.'
+                    innerP.innerHTML = '✔'
+                }, 14000);
+
+                setTimeout(() => {
+                    const spans=document.querySelectorAll('.schedule span');
+                    spans[0].innerHTML = '100-140 mmHg'
+                    spans[1].innerHTML = '85 BPM'
+                    spans[2].innerHTML = '36.5 °C'
+                    spans[3].innerHTML = '75 kg'
+                }, 14000);
+
+                setTimeout(() => document.querySelector(".start-measure").classList.add('fade'), 15500);
+                setTimeout(() => document.querySelector(".start-measure").classList.remove('fade'), 16500);
+                setTimeout(() => document.querySelector(".start-measure").classList.add('hidden'), 16500);
+                setTimeout(() => document.querySelector(".progress").classList.remove('hidden'), 16500);
+                setTimeout(() => {
+                    innerH1.innerHTML = 'Temperature checks.'
+                    innerP.innerHTML = 'Please sit leaning against the backrest.'
+                    barGuage.attributes.style.value = 'width:25%'
+                }, 16500);
+            }
+            const sendVal = () => {
+                document.querySelector('.sendValue').classList.remove('hidden');
+                const innerP = document.querySelector('.sendValue .text-center p');
+                const innerH1 = document.querySelector('.sendValue .modalBox h1');
+                setTimeout(() => {
+                    innerH1.innerHTML = 'Completed.'
+                    innerP.innerHTML = '✔'
+                }, 8000);
+                setTimeout(() => document.querySelector(".sendValue .spinner-border").classList.add('hidden'), 8000);
+
+                setTimeout(() => document.querySelector(".sendValue").classList.add('fade'), 9500);
+                setTimeout(() => document.querySelector(".sendValue").classList.remove('fade'), 11500);
+                setTimeout(() => document.querySelector(".sendValue").classList.add('hidden'), 11500);
+                setTimeout(() => {
+                    innerH1.innerHTML = 'We are sending the measured values to the clinic.'
+                    innerP.innerHTML = ''
+                }, 12000);
+
+
+
+
+
             }
             document.getElementById("modal").addEventListener("click", (event) => open(event));
             document.getElementById("measure").addEventListener("click", (event) => startMeasure(event));
-
+            document.querySelector('.sendVal').addEventListener('click', (e) => { 
+                const weightval = document.querySelector('#WEIGHT')
+                weightval.innerHTML === 'N/A kg' ? alert('Please start Measuring first.') : sendVal();
+            });
+            document.querySelector('.toMainpage').addEventListener('click', (e) => location.href='faceCheck.html')
         </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">

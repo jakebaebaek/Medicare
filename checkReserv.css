@@ -43,7 +43,7 @@ span {
     label {
         display: inline-block;
         font-size: 30px;
-        width: 15rem;
+        width: 16rem;
         padding-left: 2rem;
     }
 	.row {
@@ -66,6 +66,7 @@ span {
         border-radius: 10px;
         font-size: x-large;
         width: 10rem;
+		padding-left: 15px;
     }
 
 h2 {
@@ -81,8 +82,8 @@ h2 {
 	display: flex;
     position: absolute;
 	bottom: 50px;
-    right: 30px;
-    margin-bottom: 10rem;
+    left: 50px;
+    margin-bottom: 8rem;
 }
 
 #agree {

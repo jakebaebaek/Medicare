@@ -1,6 +1,9 @@
 body {
     overflow: hidden;
 }
+.main {
+    justify-content: center;
+}
 .logo{
     margin: 30px 50px 20px 30px;
     height: 80px;
@@ -28,7 +31,7 @@ body {
     height: 500px;
     color:rgb(18, 1, 51);
     border: 2px solid black;
-    font-size: xx-large;
+    font-size: 50px;
     font-weight: bold;
     position: relative;
 }
@@ -46,6 +49,11 @@ body {
     width: 500px;
     height: 500px;
     margin: 0 30px 20px 10% ;
+        > button {
+            display: flex;
+            flex-direction: column;
+        }
+        
 }
 .btn {  /* 일반 안내에 들어가는 btn style */
     display: flex;
@@ -55,7 +63,10 @@ body {
     width: 410px;
     font-size: 60px;
     border-radius: 50px;
-    margin-top: -30px;
+    margin-top: -30px; 
+}
+.icon {
+    font-size: 90px;
 }
 .adv {
     align-items: center;
