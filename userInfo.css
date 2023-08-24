@@ -3,6 +3,7 @@ body {
 	font-size: 14px;
 	background: #f2f2f2;
     height: 52rem;
+	font-weight: 1000;
 }
 div {
 	margin-bottom: 10px;
@@ -48,6 +49,7 @@ span {
         font-size: 30px;
         width: 15rem;
         padding-left: 2rem;
+		color: rgb(93, 93, 93);
     }
 	.row {
 		margin: 10px -15px;
@@ -79,12 +81,16 @@ h2 {
     font-size: 40px;
     line-height: 100px;
     margin: 0;
+	font-weight: 1000;
 }
 .infocheck {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 40px;
+	> label {
+		color:black;
+	}
 }
 .reservNum{
 	display: flex;

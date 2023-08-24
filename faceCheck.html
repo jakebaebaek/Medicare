@@ -16,14 +16,16 @@
 <body>
     <!--안면인식 도와주는 버튼 ( 안면인식 후에는 보이지 않는 버튼. )-->
     <div class="beforeCheck">
-        <button>Verification<br><p>👩👨</p></button>
+        <button><div>Facial<br> Recognition</div>
+            <p class="icon">👩👨</p>
+        </button>
     </div>
     <!-- 안면인식 체크 모달 -->
     <div class="modal hidden">
         <div class="bg"></div>
         <div class="modalBox">
             <div class="text-center">
-                <p>Please look at the camera above the front.<br>Recognizing your face.</p>
+                <p>Please look at the camera<br> above the front.<br>Recognizing your face.</p>
                 <div class="spinner-border" role="status">
                     <span class="sr-only"></span>
                 </div>
@@ -42,16 +44,16 @@
         //환자 확인버튼 클릭시 실행되는 함수
         const open2 = () => {
             document.querySelector(".modal").classList.remove("hidden");
-            setTimeout(() => (document.querySelector(".text-center").classList.add("hidden")), 3000);
-            setTimeout(() => (document.querySelector(".container").classList.remove("hidden")), 3005);
-            setTimeout(() => (document.querySelector(".container input").click()), 3005);
-            setTimeout(() => (document.querySelector(".container").classList.add("hidden")), 3900);
-            setTimeout(() => (document.querySelector(".container input").click()), 4100);
-            setTimeout(() => (document.querySelector(".modal").classList.add("fade")), 3900);
-            setTimeout(() => (document.querySelector(".modal").classList.add("hidden")), 4100);
-            setTimeout(() => (document.querySelector(".modal").classList.remove("fade")), 4100);
-            setTimeout(() => (document.querySelector(".text-center").classList.remove("hidden")), 4200);
-            setTimeout(() => location.href='userInfo.html' , 4100);
+            setTimeout(() => (document.querySelector(".text-center").classList.add("hidden")), 5000);
+            setTimeout(() => (document.querySelector(".container").classList.remove("hidden")), 5005);
+            setTimeout(() => (document.querySelector(".container input").click()), 5005);
+            setTimeout(() => (document.querySelector(".container").classList.add("hidden")), 6100);
+            setTimeout(() => (document.querySelector(".modal").classList.add("fade")), 6100);
+            setTimeout(() => (document.querySelector(".modal").classList.add("hidden")), 6100);
+            setTimeout(() => (document.querySelector(".modal").classList.remove("fade")), 6100);
+            setTimeout(() => (document.querySelector(".text-center").classList.remove("hidden")), 6200);
+            setTimeout(() => location.href='userInfo.html' , 6000);
+            setTimeout(() => (document.querySelector(".container input").click()), 6000);
 
         };
         // 환자확인 버튼 클릭 시 실행

@@ -153,9 +153,9 @@
                 setTimeout(() => document.querySelector('.progress').classList.add('hidden'), 14000);
                 setTimeout(() => {
                     innerH1.innerHTML = 'All measurements are complete.'
+                    innerP.style="font-size : 90px"
                     innerP.innerHTML = '✔'
                 }, 14000);
-
                 setTimeout(() => {
                     const spans=document.querySelectorAll('.schedule span');
                     spans[0].innerHTML = '100-140 mmHg'
@@ -168,6 +168,7 @@
                 setTimeout(() => document.querySelector(".start-measure").classList.remove('fade'), 16500);
                 setTimeout(() => document.querySelector(".start-measure").classList.add('hidden'), 16500);
                 setTimeout(() => document.querySelector(".progress").classList.remove('hidden'), 16500);
+                setTimeout(() => innerP.style="font-size : xx-large", 16300);
                 setTimeout(() => {
                     innerH1.innerHTML = 'Temperature checks.'
                     innerP.innerHTML = 'Please sit leaning against the backrest.'
@@ -187,10 +188,11 @@
                 setTimeout(() => document.querySelector(".sendValue").classList.add('fade'), 9500);
                 setTimeout(() => document.querySelector(".sendValue").classList.remove('fade'), 11500);
                 setTimeout(() => document.querySelector(".sendValue").classList.add('hidden'), 11500);
+                setTimeout(() => document.querySelector(".sendValue .spinner-border").classList.remove('hidden'), 11500);
                 setTimeout(() => {
                     innerH1.innerHTML = 'We are sending the measured values to the clinic.'
                     innerP.innerHTML = ''
-                }, 12000);
+                }, 11500);
             }
             document.getElementById("modal").addEventListener("click", (event) => open(event));
             document.getElementById("measure").addEventListener("click", (event) => startMeasure(event));

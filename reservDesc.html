@@ -1,180 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Appointment description</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
-      crossorigin="anonymous"
-    />
-    <style type="text/css">
-      @import url("./reservDesc.css");
-    </style>
-  </head>
 
-  <body>
-    <div class="logo">
-      <span>Medicare-bot 001</span>
-      <img src="./pics/logo.png" />
-    </div>
-    <div class="form_wrapper">
-      <div class="form_container">
-        <div class="title_container">
-          <h2>Appointment description</h2>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Appointment description</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+  <style type="text/css">
+    @import url("./reservDesc.css");
+  </style>
+</head>
+
+<body>
+  <div class="logo">
+    <span>Medicare-bot 001</span>
+    <img src="./pics/logo.png" />
+  </div>
+  <div class="form_wrapper">
+    <div class="form_container">
+      <div class="title_container">
+        <h2>Appointment description</h2>
+      </div>
+      <div class="row clearfix">
         <div class="row clearfix">
-            <div class="row clearfix">
-              <div class="col_half">
-                <div class="input">
-                  <label type="lastname" name="name"> Last name </label>
-                  <input class='lastname' type="lastname" name="name" disabled />
-                </div>
-              </div>
-              <p></p>
-              <div class="col_half">
-                <div class="input_field">
-                  <label type="fristname" name="'name"> First name</label>
-                  <input class='fristname' type="fristname" name="name" disabled />
-                </div>
-              </div>
-            </div>
-            <div class="input_field">
-              <label type="number_ID" name="'number_ID"> ID number </label>
-              <input
-                id="idNum"
-                class="idNum1"
-                type="number_ID"
-                name="number_ID"
-                value="940321"
-                disabled
-              />
-              <span id="numspan">ㅡ</span>
-              <input
-                id="idNum"
-                class="idNum2"
-                type="number_ID"
-                name="number_ID"
-                value="2147220"
-                disabled
-              />
-            </div>
-            <div>
-              <label type="texts" name="reservNum"> Patient Number </label>
-              <input
-                id="idNum"
-                class="reservNum"
-                type="texts"
-                name="reservNum"
-                value="M139207"
-                disabled
-              />
-            </div>
-            <div class="schedule">
-              <h2>Consultation Schedule</h2>
-              <div class="consult">
-                <label>Department</label> <span>Neuropsychiatry</span><br>
-                <label>Doctor</label> <span>Mr.fixwell</span><br>
-                <label>Appointment date</label> <span>2023-08-08 (Tue) 13:30</span><br>
-                <label>Location</label> <span>Main/3rd floor/Neuropsychiatry</span><br>
-              </div>
-            </div>
-            <div class="schedule">
-              <h2>Diagnosis Schedule</h2>
-              <div>
-                <label>Checkup for</label> <span>Insomnia</span><br>
-                <label>Diagnosis date</label> <span>2023-09-08 (Fri) 14:00</span><br>
-                <label>Location</label> <span>Main/B1/EEG lab</span><br>
-              </div>
-            </div>
-            <div class="buttons">
-              <button id="toMain" class="btn btn-primary">Main page</button>
-              <button id="openBtn" class="btn btn-primary">Measures</button>
-              <button id="call" class="btn btn-primary">need help?</button>
+          <div class="col_half">
+            <div class="input">
+              <label type="lastname" name="name"> Last name </label>
+              <input class='lastname' type="lastname" name="name" disabled />
             </div>
           </div>
-      </div>
-      <!-- 모달 창 부분 -->
-      <div class="modal hidden">
-        <div class="bg"></div>
-        <div class="modalBox">
-          <p>Please sit down in the robot<br />🧘‍♂️</p>
-          <button class="closeBtn">sure</button>
-        </div>
-      </div>
-      <div class="modal2 hidden">
-        <div class="bg"></div>
-        <div class="modalBox">
-          <p>Connecting with hospital receptionist.<br />Please wait for a moment.
-            <div class="text-center">
-              <div class="spinner-border" role="status">
-                <span class="sr-only"></span>
-              </div>
+          <p></p>
+          <div class="col_half">
+            <div class="input_field">
+              <label type="fristname" name="'name"> First name</label>
+              <input class='fristname' type="fristname" name="name" disabled />
             </div>
-          </p>
+          </div>
+        </div>
+        <div class="input_field">
+          <label type="number_ID" name="'number_ID"> ID number </label>
+          <input id="idNum" class="idNum1" type="number_ID" name="number_ID" value="940321" disabled />
+          <span id="numspan">ㅡ</span>
+          <input id="idNum" class="idNum2" type="number_ID" name="number_ID" value="2147220" disabled />
+        </div>
+        <div>
+          <label type="texts" name="reservNum"> Patient Number </label>
+          <input id="idNum" class="reservNum" type="texts" name="reservNum" value="M139207" disabled />
+        </div>
+        <div class="schedule">
+          <h2>Consultation Schedule</h2>
+          <div class="consult">
+            <label>Department</label> <span>Neuropsychiatry</span><br>
+            <label>Doctor</label> <span>Mr.fixwell</span><br>
+            <label>Appointment date</label> <span>2023-08-08 (Tue) 13:30</span><br>
+            <label>Location</label> <span>Main/3rd floor/Neuropsychiatry</span><br>
+          </div>
+        </div>
+        <div class="schedule">
+          <h2>Diagnosis Schedule</h2>
+          <div>
+            <label>Checkup for</label> <span>Insomnia</span><br>
+            <label>Diagnosis date</label> <span>2023-09-08 (Fri) 14:00</span><br>
+            <label>Location</label> <span>Main/B1/EEG lab</span><br>
+          </div>
+        </div>
+        <div class="buttons">
+          <button id="toMain" class="btn btn-primary">Main page</button>
+          <button id="openBtn" class="btn btn-primary">Measures</button>
+          <button id="call" class="btn btn-primary">need help?</button>
         </div>
       </div>
     </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      const open = () => {
-        document.querySelector(".modal").classList.remove("hidden");
-        setTimeout(() => (location.href = "counseling.html"), 5500);
-        console.log("open");
-      };
-      const open2 = () => {
-        document.querySelector(".modal2").classList.remove("hidden");
-        setTimeout(() => (document.querySelector(".modal2").classList.add("fade")), 3000);
-        setTimeout(() => (document.querySelector(".modal2").classList.add("hidden")), 3220);
-        setTimeout(() => (document.querySelector(".modal2").classList.remove("fade")), 3220);
+    <!-- 모달 창 부분 -->
+    <div class="modal hidden">
+      <div class="bg"></div>
+      <div class="modalBox">
+        <h1>Please sit down in the robot</h1><br/><h2>🧘‍♂️</h2>
+        <button class="closeBtn">sure</button>
+      </div>
+    </div>
+    <div class="modal2 hidden">
+      <div class="bg"></div>
+      <div class="modalBox">
+        <p>Connecting with<br> hospital receptionist.<br />Please wait for a moment.</p>
+        <div class="text-center">
+          <div class="spinner-border" role="status">
+            <span class="sr-only"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+  <script>
+    const open = () => {
+      document.querySelector(".modal").classList.remove("hidden");
+      // setTimeout(() => (location.href = "counseling.html"), 5500);
+      console.log("open");
+    };
+    const open2 = () => {
+      document.querySelector(".modal2").classList.remove("hidden");
+      setTimeout(() => (document.querySelector(".modal2").classList.add("fade")), 3000);
+      setTimeout(() => (document.querySelector(".modal2").classList.add("hidden")), 3220);
+      setTimeout(() => (document.querySelector(".modal2").classList.remove("fade")), 3220);
 
-        console.log("open");
-      };
+      console.log("open");
+    };
 
-      const close = () => {
-        document.querySelector(".modal").classList.add("hidden");
-        console.log("close");
-      };
-      const toNext = () => {
-        location.href = "counseling.html";
-      };
-      const toMain = () => {
-        location.href = "index.html";
-      };
-      function get_query() {
-        var url = document.location.href;
-        var qs = url.substring(url.indexOf("?") + 1).split("&");
-        for (var i = 0, result = []; i < qs.length; i++) {
-          qs[i] = qs[i].split("=");
-          result.push(decodeURIComponent(qs[i][1])) 
-        }
-        return result;
+    const close = () => {
+      document.querySelector(".modal").classList.add("hidden");
+      console.log("close");
+    };
+    const toNext = () => {
+      location.href = "counseling.html";
+    };
+    const toMain = () => {
+      location.href = "index.html";
+    };
+    function get_query() {
+      var url = document.location.href;
+      var qs = url.substring(url.indexOf("?") + 1).split("&");
+      for (var i = 0, result = []; i < qs.length; i++) {
+        qs[i] = qs[i].split("=");
+        result.push(decodeURIComponent(qs[i][1]))
       }
-      var result = get_query();
-      console.log(result)
-      document.getElementById("openBtn").addEventListener("click", (event) => open(event));
-      document.getElementById("call").addEventListener("click", (event) => open2(event));
-      document.querySelector(".closeBtn").addEventListener("click", toNext);
-      document.querySelector("#toMain").addEventListener("click", toMain);
-      // document.querySelector(".bg").addEventListener("click", close);
-      const lastname = result[0];
-      const fristname = result[1];
-      const num_id = result[2];
-      const num_idl = result[3];
-      const cusNum = result[4];
-      console.log(lastname, fristname, num_id, num_idl, cusNum)
-      let input_name = document.querySelector('.lastname').setAttribute("value", lastname);
-      let input_firstname = document.querySelector('.fristname').setAttribute("value", fristname);
-      let numid1 = document.querySelector('.idNum1').setAttribute('value', num_id);
-      let numid2 = document.querySelector('.idNum2').setAttribute('value', num_idl);
-      let customer = document.querySelector('.reservNum').setAttribute('value', cusNum)
+      return result;
+    }
+    var result = get_query();
+    console.log(result)
+    document.getElementById("openBtn").addEventListener("click", (event) => open(event));
+    document.getElementById("call").addEventListener("click", (event) => open2(event));
+    document.querySelector(".closeBtn").addEventListener("click", toNext);
+    document.querySelector("#toMain").addEventListener("click", toMain);
+    const lastname = result[0];
+    const fristname = result[1];
+    const num_id = result[2];
+    const num_idl = result[3];
+    const cusNum = result[4];
+    console.log(lastname, fristname, num_id, num_idl, cusNum);
+    let input_name = document.querySelector('.lastname').setAttribute("value", lastname);
+    let input_firstname = document.querySelector('.fristname').setAttribute("value", fristname);
+    let numid1 = document.querySelector('.idNum1').setAttribute('value', num_id);
+    let numid2 = document.querySelector('.idNum2').setAttribute('value', num_idl);
+    let customer = document.querySelector('.reservNum').setAttribute('value', cusNum)
+    
+  </script>
+</body>
 
-    </script>
-  </body>
 </html>

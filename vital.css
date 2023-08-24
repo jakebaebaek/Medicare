@@ -1,5 +1,6 @@
 body {
     overflow: hidden;
+    font-weight: 1000;
 }
 
 .form_wrapper {
@@ -48,6 +49,7 @@ h1 {
     justify-content: center;
     margin: 0 4rem 1rem 4rem;
     font-size: 50px;
+    font-weight: 1000;
 }
 hr {
   width:100% ;
@@ -68,6 +70,7 @@ label {
     font-size: 35px;
     width: 20rem;
     margin : 1rem 1rem 1rem 5rem;
+    color: rgb(93, 93, 93);;
 }
 .buttons {
     display: flex;
@@ -114,6 +117,7 @@ label {
 .schedule span {
     width: 16rem;
     font-size: 25px;
+    text-decoration: underline;
 }
 /* 모달 창 css */
 

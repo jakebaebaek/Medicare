@@ -2,23 +2,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    align-content: space-around;
             >button {
-                border: 1px solid blue;
+                border: 1px solid rgb(147, 168, 255);
                 border-radius: 50px;
                 background-color: rgb(56, 56, 255);
                 color: #ffffff; 
                 font-family:Arial;
-                font-size: 50px;
-                margin: 50% 1rem 2rem 1rem;
-                width: 500px;
-                height: 500px;
+                margin: 15% 1rem 2rem 1rem;
+                width: 900px;
+                height: 1200px;
+                font-size: 150px;
             }
+            > div {
+              font-weight: 1000;
+            }
+}
+.icon {
+  font-size: 300px;
 }
 /* 모달 창 css */
 
 .modal {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -39,6 +44,7 @@
     background-color: #fff;
     width: 40rem;
     height: 30rem;
+    margin-top: -500px;
     padding: 15px;
     border: 5px solid rgba(47, 100, 247, 0.86);
     border-radius: 50px;
@@ -49,6 +55,7 @@
     text-align: center;
     margin: 130px 30px 30px 30px;
     font-size: xx-large;
+    font-weight: 1000;
   }
   .hidden {
     display: none;
@@ -101,7 +108,8 @@
 }
 .container h2 {
   margin-top: 100px;
-  font-size: xx-large;
+  font-size: 70px;
+  font-weight: 1000;
 }
 
 /* Checkmark style starts */
