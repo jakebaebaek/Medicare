@@ -44,8 +44,7 @@ body {
         left: 25%;
         width: 500px;
         z-index: 0;
-        opacity: 15%;
-        
+        opacity: 10%;
     }
 
 }
@@ -54,10 +53,10 @@ body {
     white-space: nowrap; /* Prevent line breaks */
     position: relative; /* Required for animation */
     animation: flowAnimation 10s linear infinite; /* Apply animation */
+    z-index: 4;
     > h3{
         font-size: 85px;
         margin-bottom: 20px;
-        z-index: 5;
     }
 }
 
