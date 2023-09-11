@@ -11,8 +11,8 @@
         @import url("./userInfo.css");
     </style>
 </head>
-
-<body oncontextmenu="return false;">
+<!-- oncontextmenu="return false;" -->
+<body>
     <div class="logo">
         <span>Medicare-bot 001</span>
         <img src="./pics/logo.png" />
@@ -31,9 +31,7 @@
                                 <div class="input">
                                     <label type="lastname" name="name"> Last name </label>
                                     <input 
-                                        type="lastname" 
-                                        name="name" 
-                                        value="KIM" 
+                                        name="lastname" 
                                         maxlength="12"
                                         oninput="inputStringOnly(this)"
                                         disabled 
@@ -44,11 +42,9 @@
                             <p></p>
                             <div class="col_half">
                                 <div class="input_field">
-                                    <label type="fristname" name="name"> First name</label>
+                                    <label type="firstname" name="name"> First name</label>
                                     <input 
-                                        type="fristname" 
-                                        name="name" 
-                                        value="Deokbae" 
+                                        name="firstname" 
                                         maxlength="15"
                                         oninput="inputStringOnly(this)"
                                         disabled 
@@ -64,7 +60,6 @@
                                 name="FID" 
                                 oninput="inputNumberOnly(this)" 
                                 maxlength="6"
-                                value="940321" 
                                 disabled 
                                 required 
                             />
@@ -74,7 +69,6 @@
                                 name="BID" 
                                 oninput="inputNumberOnly(this)" 
                                 maxlength="7"
-                                value="2147220" 
                                 disabled 
                                 required 
                             />
@@ -86,10 +80,9 @@
                                 name="reservNum" 
                                 maxlength="15" 
                                 minlength="3"
-                                value="M330"
                                 oninput="patientNumOnly(this)"  
                                 disabled 
-                                required 
+                                required
                             />
                         </div>
                         <div class="infocheck">
@@ -107,6 +100,14 @@
         </div>
     </div>
     <script>
+        const localvals = JSON.parse(localStorage.getItem('values'));
+        console.log(localvals)
+        document.getElementsByName('lastname')[0].value = localvals.lastname;
+        document.getElementsByName('firstname')[0].value = localvals.firstname;
+        document.getElementsByName('BID')[0].value = localvals.BID;
+        document.getElementsByName('FID')[0].value = localvals.FID;
+        document.getElementsByName('reservNum')[0].value = localvals.patientNumber;
+
         function inputNumberOnly(el) {
             el.value = el.value.replace(/[^0-9]/g, "");
         }
@@ -119,6 +120,7 @@
         const inputs = document.querySelectorAll('input');
         const noBtn = document.querySelector('#no')
         noBtn.addEventListener('click', (event) => {
+            localStorage.clear();
             document.querySelectorAll('input').forEach((e) => e.disabled = false);
             document.querySelectorAll('input').forEach((e) => e.value = "");
             document.querySelectorAll('.btn').forEach((e) => e.style.display = 'none');

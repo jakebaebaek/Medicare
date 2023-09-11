@@ -30,15 +30,15 @@
               <div class="col_half">
                 <div class="input">
                   <label type="lastname" name="name"> Last name </label>
-                  <input type="lastname" name="name" placeholder="KIM" maxlength="12" oninput="inputStringOnly(this)"
+                  <input name="lastname" placeholder="KIM" maxlength="12" oninput="inputStringOnly(this)"
                     required />
                 </div>
               </div>
               <p></p>
               <div class="col_half">
                 <div class="input_field">
-                  <label type="fristname" name="name"> Frist name</label>
-                  <input type="fristname" name="name" placeholder="Deokbae" maxlength="15"
+                  <label type="firstname" name="name"> Frist name</label>
+                  <input name="firstname" placeholder="Deokbae" maxlength="15"
                     oninput="inputStringOnly(this)" required />
                 </div>
               </div>
@@ -80,12 +80,31 @@
       const FID = document.getElementsByName('FID');
       const BID = document.getElementsByName('BID');
       const PN = document.getElementsByName('reservNum');
-
+      localSet();
       if (FID[0].value.length < 6 | BID[0].value.length < 7 | PN[0].value.length < 3) {
         e.preventDefault();
         alert('주민등록번호 혹은 환자번호가 올바른지 확인해주세요.')
       }
     }
+
+    //로컬스토리지 초기화 및 로컬스토리지 정보 저장
+    function localSet() {
+      localStorage.clear();
+      const Lname = document.getElementsByName('lastname')[0].value;
+      const Fname = document.getElementsByName('firstname')[0].value;
+      const FID = document.getElementsByName('FID')[0].value;
+      const BID = document.getElementsByName('BID')[0].value;
+      const PN = document.getElementsByName('reservNum')[0].value;
+      const obj = {
+        "lastname": Lname,
+        "firstname": Fname,
+        "FID":FID,
+        "BID":BID,
+        "patientNumber":PN
+      }
+      const localOBJ = JSON.stringify(obj)
+      localStorage.setItem('values',localOBJ)
+    };
 
     const inputs = document.querySelectorAll('input');
     inputs.forEach((e) => {
