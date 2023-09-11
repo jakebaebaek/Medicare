@@ -1,101 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Check Appointment</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <style type="text/css">
-      @import url("./checkReserv.css");
-    </style>
-    <!-- <script src="./virtualKeyboard.js" ></script> -->
-  </head>
 
-  <body oncontextmenu="return false;">
-    <div class="logo">
-      <span>Medicare-bot 001</span>
-      <img src="./pics/logo.png" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Check Appointment</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <style type="text/css">
+    @import url("./checkReserv.css");
+  </style>
+  <!-- <script src="./virtualKeyboard.js" ></script> -->
+</head>
+
+<body oncontextmenu="return false;">
+  <div class="logo">
+    <span>Medicare-bot 001</span>
+    <img src="./pics/logo.png" />
   </div>
-    <div class="form_wrapper">
-      <div class="form_container">
-      <form
-        action="reservDesc.html"
-      >
+  <div class="form_wrapper">
+    <div class="form_container">
+      <form action="reservDesc.html">
         <div class="title_container">
           <h2>Appointment Confirmation</h2>
         </div>
         <div class="row clearfix">
           <div class="">
-            <form>
-              <div class="row clearfix">
-                <div class="col_half">
-                  <div class="input">
-                    <label type="lastname" name="'name"> Last name </label>
-                    <input
-                      type="lastname"
-                      name="name"
-                      placeholder="KIM"
-                      maxlength="12"
-                      oninput="inputStringOnly(this)"
-                      required
-                    />
-                  </div>
-                </div><p></p> 
-                <div class="col_half">
-                  <div class="input_field">
-                    <label type="fristname" name="'name"> Frist name</label>
-                    <input
-                      type="fristname"
-                      name="name"
-                      placeholder="Deokbae"
-                      maxlength="15"
-                      oninput="inputStringOnly(this)"
-                      required
-                    />
-                  </div>
+            <div class="row clearfix">
+              <div class="col_half">
+                <div class="input">
+                  <label type="lastname" name="name"> Last name </label>
+                  <input type="lastname" name="name" placeholder="KIM" maxlength="12" oninput="inputStringOnly(this)"
+                    required />
                 </div>
               </div>
-              <div class="input_field">
-                <label type="number_ID" name="'number_ID"> ID number </label>
-                <input type="text" name="'number_ID" oninput="inputNumberOnly(this)" maxlength="6" required/>
-                <span>ㅡ</span>
-                <input type="text" name="'number_ID" oninput="inputNumberOnly(this)" maxlength="7" required/>
+              <p></p>
+              <div class="col_half">
+                <div class="input_field">
+                  <label type="fristname" name="name"> Frist name</label>
+                  <input type="fristname" name="name" placeholder="Deokbae" maxlength="15"
+                    oninput="inputStringOnly(this)" required />
+                </div>
               </div>
-              <div>
-                <label type="texts" name="reservNum"> Patient number </label>
-                <input 
-                  type="text" 
-                  name="'reservNum" 
-                  maxlength="7" 
-                  style="width: 21.8rem;"
-                  oninput="inputNumberOnly(this)"
-                  required
-                />
-              </div>
-              <div class="input_field checkbox_option">
-                <input type="checkbox" id="agree" required/>
-                <label style="width: auto;" for="cb2">Agree to provide personal information.</label>
-              </div>
-              <div class="btns">
-                <button style="width: 150px; height: 6rem; font-size: x-large;" class="btn btn-primary"> Submit </button> 
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
+            </div>
+            <div class="input_field">
+              <label type="number_ID" name="number_ID"> ID number </label>
+              <input type="text" name="FID" oninput="inputNumberOnly(this)" maxlength="6" required />
+              <span>ㅡ</span>
+              <input type="text" name="BID" oninput="inputNumberOnly(this)" maxlength="7" required />
+            </div>
+            <div>
+              <label type="texts"> Patient number </label>
+              <input type="text" name="reservNum" maxlength="7" style="width: 21.8rem;" oninput="inputNumberOnly(this)"
+                required />
+            </div>
+            <div class="input_field checkbox_option">
+              <input type="checkbox" id="agree" required />
+              <label style="width: auto;" for="cb2">Agree to provide personal information.</label>
+            </div>
+            <div class="btns">
+              <button style="width: 150px; height: 6rem; font-size: x-large;" class="btn btn-primary"> Submit </button>
+            </div>
+      </form>
     </div>
-    <script>
-      function inputNumberOnly(el) {
-        el.value = el.value.replace(/[^0-9]/g, "");
+  </div>
+  </div>
+  </div>
+  <script>
+    function inputNumberOnly(el) {
+      el.value = el.value.replace(/[^0-9]/g, "");
+    }
+    function inputStringOnly(el) {
+      el.value = el.value.replace(/[^ㄱ-힣a-zA-Z]/g, "")
+    }
+
+    //주민등록번호와 환자번호 길이 유효성 검사
+    document.querySelector('.btn').addEventListener('click', (e) => checkID(e));
+    function checkID(e) {
+      const FID = document.getElementsByName('FID');
+      const BID = document.getElementsByName('BID');
+      const PN = document.getElementsByName('reservNum');
+
+      if (FID[0].value.length < 6 | BID[0].value.length < 7 | PN[0].value.length < 3) {
+        e.preventDefault();
+        alert('주민등록번호 혹은 환자번호가 올바른지 확인해주세요.')
       }
-      function inputStringOnly(el) {
-        el.value = el.value.replace(/[^ㄱ-힣a-zA-Z]/g, "")
-      }
-      const inputs = document.querySelectorAll('input');
-      inputs.forEach((e) => {
-        e.setAttribute('autocomplete', 'off');
-      })
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-  </body>
+    }
+
+    const inputs = document.querySelectorAll('input');
+    inputs.forEach((e) => {
+      e.setAttribute('autocomplete', 'off');
+    })
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>

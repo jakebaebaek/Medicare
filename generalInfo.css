@@ -4,6 +4,10 @@ body {
   width: 100%;
   height: 100%;
   animation: expand 0.5s linear forwards;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-use-select: none;
+  user-select: none;
 }
 .logo {
   font-weight: 1000;
