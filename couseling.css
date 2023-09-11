@@ -30,7 +30,7 @@ body {
 .text::before {
     position: absolute;
     content: "";
-    background-image: url(/pics/inConsultation.jpg);
+    background-image: url(./pics/inConsultation.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     top: 0;
