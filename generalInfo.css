@@ -1,0 +1,142 @@
+body {
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  animation: expand 0.5s linear forwards;
+}
+.logo {
+  font-weight: 1000;
+
+  margin: 30px 50px 20px 30px;
+  height: 80px;
+  display: block;
+  > img {
+    width: 150px;
+    position: absolute;
+    right: 60px;
+  }
+  > span {
+    font-size: 40px;
+    position: absolute;
+    left: 40px;
+    display: inline-flex;
+    margin: 20px 0 0 10px;
+  }
+}
+.container {
+  width: 95%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 95%;
+}
+button.btn.btn-primary {
+  border-radius: 40px;
+}
+.btn {
+  /* 일반 안내에 들어가는 btn style */
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0 40px 0;
+  height: 380px;
+  width: 650px;
+}
+div {
+  font-size: 60px;
+}
+.icon {
+  font-size: 150px;
+}
+#toMain {
+    background: radial-gradient(rgb(0, 0, 170), rgb(0, 72, 255));
+    position: relative;
+    width: 300px;
+    height: 100px;
+    border: #fff;
+    border-radius: 20px;
+    >div {
+        font-size: 30px;
+    }
+}
+
+/* 모달창 css */
+
+.modals {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: expand 0.4s linear forwards;
+  /* animation: fadeout 3s linear forwards; */
+}
+.modals .bg {
+  width: 100%;
+  height: 120%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modalBox {
+  position: absolute;
+  background-color: #fff;
+  width: 40rem;
+  height: 30rem;
+  padding: 15px;
+  border: 5px solid rgba(47, 100, 247, 0.86);
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  >p {
+    font-size: 45px;
+    font-weight: 800;
+  }
+}
+.hidden {
+  display: none;
+}
+.fade {
+  animation: fadeout 0.2s linear forwards;
+}
+/* 페이지 등장 &&  모달 등장 애니메이션 */
+@keyframes expand {
+  0% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    opacity: 0;
+  }
+  25% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  50% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  75% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  /* 효과를 동작시간 동안 0 ~ 1까지 */
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

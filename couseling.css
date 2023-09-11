@@ -12,18 +12,44 @@ body {
     height: 1550px;
     max-width: 100%;
     max-height: 110%;
+    z-index: 2;
 
 }
 .text {
-    margin-top: 50px;
+    position: relative;
+    margin-top: 100px;
     height: 1550px;
-
-}
-p {
     display: flex;
-    font-size: 100px;
     justify-content: center;
-    margin-top: 500px;
+    >h1 {
+        padding-top: 40px;
+        position: relative;
+        font-size: 100px;
+    }
+}
+.text::before {
+    position: absolute;
+    content: "";
+    background-image: url(/pics/inConsultation.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.4;
+    z-index: 0;
+}
+
+img {
+    width: 115%;
+    height: auto;
+    opacity: 40%;
+    position: absolute;
+    top:50px;
+    left: 0;
+    overflow: hidden;
+    z-index: 0;
 }
 @keyframes expand { 
 	0% { -webkit-transform:  scale(1,1); transform:  scale(1,1);  opacity:0; }

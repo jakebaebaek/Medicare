@@ -12,7 +12,7 @@
     </style>
 </head>
 
-<body>
+<body oncontextmenu="return false;">
     <div class="logo">
         <span>Medicare-bot 001</span>
         <img src="./pics/logo.png" />
@@ -25,38 +25,78 @@
             <div class="row clearfix">
                 <div class="">
                     <form action="vital.html">
+                    <!-- <form> -->
                         <div class="row clearfix">
                             <div class="col_half">
                                 <div class="input">
-                                    <label type="lastname" name="'name"> Last name </label>
-                                    <input type="lastname" name="name" value="KIM" disabled required />
+                                    <label type="lastname" name="name"> Last name </label>
+                                    <input 
+                                        type="lastname" 
+                                        name="name" 
+                                        value="KIM" 
+                                        maxlength="12"
+                                        oninput="inputStringOnly(this)"
+                                        disabled 
+                                        required 
+                                    />
                                 </div>
                             </div>
                             <p></p>
                             <div class="col_half">
                                 <div class="input_field">
-                                    <label type="fristname" name="'name"> First name</label>
-                                    <input type="fristname" name="name" value="Deokbae" disabled required />
+                                    <label type="fristname" name="name"> First name</label>
+                                    <input 
+                                        type="fristname" 
+                                        name="name" 
+                                        value="Deokbae" 
+                                        maxlength="15"
+                                        oninput="inputStringOnly(this)"
+                                        disabled 
+                                        required 
+                                    />
                                 </div>
                             </div>
                         </div>
                         <div class="input_field">
-                            <label type="number_ID" name="'number_ID"> ID number </label>
-                            <input type="text" name="'number_ID" oninput="inputNumberOnly(this)" maxlength="6"
-                                value="940321" disabled required />
+                            <label type="number_ID" name="number_ID"> ID number </label>
+                            <input 
+                                type="text" 
+                                name="FID" 
+                                oninput="inputNumberOnly(this)" 
+                                maxlength="6"
+                                value="940321" 
+                                disabled 
+                                required 
+                            />
                             <span>ㅡ</span>
-                            <input type="text" name="'number_ID" oninput="inputNumberOnly(this)" maxlength="7"
-                                value="2147220" disabled required />
+                            <input 
+                                type="text" 
+                                name="BID" 
+                                oninput="inputNumberOnly(this)" 
+                                maxlength="7"
+                                value="2147220" 
+                                disabled 
+                                required 
+                            />
                         </div>
                         <div class="reservNum">
-                            <label type="texts" name="reservNum"> Patient Number </label>
-                            <input type="text" name="'reservNum" maxlength="15" value="M330" disabled required />
+                            <label type="texts"> Patient Number </label>
+                            <input 
+                                type="text" 
+                                name="reservNum" 
+                                maxlength="15" 
+                                minlength="3"
+                                value="M330"
+                                oninput="patientNumOnly(this)"  
+                                disabled 
+                                required 
+                            />
                         </div>
                         <div class="infocheck">
                             <label style="width: auto;" for="cb2">Does the above information match yours?</label>
                         </div>
                         <div class="btns">
-                            <button id="yes" style=" font-size: x-large;" class="btn btn-primary"> Yes <br>(Measures)
+                            <button id="yes" style=" font-size: x-large;" class="btn btn-primary"> Yes <br>(Measuring)
                             </button>
                             <button id="no" style=" font-size: x-large;" class="btn btn-primary"> No <br> (Direct input)
                             </button>
@@ -70,6 +110,12 @@
         function inputNumberOnly(el) {
             el.value = el.value.replace(/[^0-9]/g, "");
         }
+        function inputStringOnly(el) {
+            el.value = el.value.replace(/[^ㄱ-힣a-zA-Z]/g, "")
+        }
+        function patientNumOnly(el) {
+            el.value = el.value.replace(/[^0-9a-zA-Z]/g, "")
+        }
         const inputs = document.querySelectorAll('input');
         const noBtn = document.querySelector('#no')
         noBtn.addEventListener('click', (event) => {
@@ -80,6 +126,7 @@
             submitBtn.setAttribute('class', 'btn btn-primary');
             submitBtn.setAttribute('style', 'font-size:25px;')
             submitBtn.innerHTML = 'Submit'
+            submitBtn.addEventListener('click', (e) => checkID(e) );
             document.querySelector('.infocheck label').innerHTML = 'Please wirte down your information'
             document.querySelector('.btns').appendChild(submitBtn);
         }
@@ -88,6 +135,16 @@
         input.forEach((e) => {
             e.setAttribute('autocomplete', 'off');
         })
+        //주민등록번호와 환자번호 길이 유효성 검사
+        function checkID(e) {
+            const FID = document.getElementsByName('FID');
+            const BID = document.getElementsByName('BID');
+            const PN = document.getElementsByName('reservNum');
+            if(FID[0].value.length<6 | BID[0].value.length <7 | PN[0].value.length < 3){
+                e.preventDefault();
+                alert('주민등록번호 혹은 환자번호가 올바른지 확인해주세요.')
+            }
+        }
 
     </script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"

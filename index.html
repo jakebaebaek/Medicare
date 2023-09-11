@@ -9,7 +9,7 @@
         @import url('./greeting.css');
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;">
     <div class="Main">
         <div class="logo">
             <span>Medicare-bot 001</span>
@@ -18,7 +18,6 @@
         <div id="greeting">
             <img src="./pics/medicalLogo.jpg"/>
             <div class="flow-text"> 
-                <h3>지샘병원 방문을 환영합니다.</h3>
                 <span >
                     Thank you for the visiting our clinic.<br/>
                     Please select the job you need below.
@@ -27,7 +26,7 @@
         </div>
         <div class="container">
             <div class="item" >
-                <button type="button" class="btn btn-primary">
+                <button onclick="location.href='generalInfo.html'" type="button" class="btn btn-primary">
                     <div>General<br>Information</div>
                     <div class="icon">🏥</div>
                 </button> 

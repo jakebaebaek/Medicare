@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Info</title>
+    <style type="text/css">
+        @import url('/generalInfo.css');
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+</head>
+<body oncontextmenu="return false;">
+    <div class="logo">
+        <span>Medicare-bot 001</span>
+        <img src="./pics/logo.png" />
+    </div>
+    <hr>
+    <div class="container">
+        <div>
+            <button type="button" class="dept btn btn-primary">
+                <div>Department Info</div>
+                <div class="icon">🩺</div>
+            </button>
+        </div>
+        <div>
+            <button type="button" class="clinic btn btn-primary">
+                <div>Clinic Info</div>
+                <div class="icon">🏥</div>
+            </button>
+        </div>
+        <div>
+            <button type="button" class="call btn btn-primary">
+                <div>Need help?</div>
+                <div class="icon">👩‍💼</div>
+            </button>
+        </div>
+        <button id='toMain' onclick="location.href='index.html'" type="button" class="btn btn-primary">
+            <div>Main page</div>
+        </button>
+
+        <!-- 도우미 모달 창  -->
+        <div class="modals hidden">
+            <div class="bg"></div>
+            <div class="modalBox">
+                <p>Connecting with <br>hospital receptionist.<br>Please wait for a moment.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+            const open = (e) => {
+                const callmodal = document.querySelector('.modals');
+                callmodal.classList.remove("hidden");
+                callHelp(callmodal);
+                console.log('open')
+            }
+            const callHelp = (callmodal) => {
+                setTimeout(() => callmodal.classList.add('fade'), 4000);
+                setTimeout(() => callmodal.classList.remove('fade'), 5000);
+                setTimeout(() => close(), 5000);
+            }
+            const close = () => {
+                document.querySelector(".modals").classList.add("hidden");
+                console.log('close')
+            }
+        document.querySelector('.call').addEventListener('click',(e)=> open(e));
+    </script>
+</body>
+</html>
