@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Clinic Map</title>
+	<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> -->
+
+	<style>
+		@import url('./map.css');
+		/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+		gmp-map {
+			height: 100%;
+		}
+
+	</style>
+</head>
+
+<body>
+	<header>
+        <div class="logo">
+            <span>Medicare-bot 001</span>
+            <img src="./pics/logo.png" />
+        </div>
+        <hr />
+    </header>
+		<div class="addr">
+			<h2>🌍Address :</h2>
+			<span>43, Changeop-ro, Sujeong-gu, <br>Seongnam-si, Gyeonggi-do, Republic of Korea
+			</span>
+		</div>
+		<div id="map"></div>
+		<h1 class="titleFloor">Floor Information</h1>
+			<div class="floorInfo">
+				<div class="floor">5F</div><span>Rooftop Park</span><span></span><span></span><span></span>
+				<div class="floor">4F</div><span>Rheumatology</span><span>Obstetrician</span><span></span><span></span>
+				<div class="floor">3F</div><span>Neurology</span><span>Ophthalmology</span><span>Orthopedics</span><span></span>
+				<div class="floor">2F</div><span>Anesthesiology</span><span class="BFR">Injection <br><p>Room</p></span><span>Radiology</span><span>Rehabilitation</span>
+				<div class="floor">1F</div><span>Endocrinology</span><span>Pediatrics</span><span>Surgery</span><span></span>
+				<div class="floor">L</div><span>Reception</span><span class="BFR">Breastfeeding<br><p>Room</p></span><span>Medicine</span><span>CVS</span>
+			</div>	
+			<div class="btns">
+				<button onclick="location.href='./Index.html'">To Main</button>
+				<button onclick="window.history.back()">Go Back</button>
+			</div>
+		<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRscsb5zWIVtLgdtItaTIJ-1s8p64PDI0&callback=initMap&v=weekly"
+		defer
+	  ></script>  
+		<script src="./map.js"></script>
+
+</body>
+
+</html>

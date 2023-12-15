@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departments</title>
+    <style type="text/css">
+        @import url("./Pediatrics.css");
+    </style>
+</head>
+<body>
+    <header>
+        <!-- <nav>
+            <ul>
+                <li href="#">Pediatrics</li>
+                <li href="#">Endocrinology</li>
+                <li href="#">Rheumatology</li>
+                <li href="#">obstetrician</li>
+                <li href="#">neurology</li>
+                <li href="#">Ophthalmology</li>
+            </ul>
+        </nav> -->
+        <img class="back" src="../pics/goBackIcon.png" />
+        <span>Back to Dept lists</span> 
+        <div class="logo">
+            <img src="../pics/logo.png"/> 
+        </div>
+    </header>
+    <div>
+        <div>
+        </div>
+        <h1 class="greets">
+            🍀Welcome to&nbsp; <span>Pediatrics</span>🍀
+        </h1>
+        <img class="dept_pic" src="../pics/doctor_with_child.jpg">
+        <div class="desc1">
+            <h1> Diagnosis </h1>
+                <ul>
+                    <li> infectious </li>
+                    <li> newborn </li>
+                    <li> liver </li>
+                    <li> allergic </li>
+                    <li> Respiratory </li>
+                </ul>
+        </div>
+        <hr/>
+        <div class="desc2">
+            <h1> Location & Contact</h1> <span>2nd floor &nbsp;/&nbsp;</span>  <span>+8210 - 1111 - 1111</span>
+        </div>
+        <hr/>
+
+        <div class="docIncharge">
+            <h1>Doctor in charge</h1>
+            <div class="docImg">
+                <img src="../pics/doctorProf.jpg">
+                <h2>Christine stella</h2> 
+            </div>
+        </div>
+    </div>
+    <script>
+        const back = document.querySelector('.back');
+        back.setAttribute('src', '../pics/doctor.jpg')
+        console.log(back)
+        back.addEventListener('click', e =>  window.location.href='../select.html')
+    </script>
+</body>
+</html>

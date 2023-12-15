@@ -37,15 +37,15 @@
                 <button id="modal"> Need help?</button>
                 <hr id="bthr"></hr>
                 <!-- <div class="patientName">
-                    <label type="name" name="'name"> 성명 </label>
+                    <label type="name" name=name"> 성명 </label>
                     <input style="text-align: center;" type="name" name="name" value="김덕배" disabled />
                 </div> -->
                 <!-- <div class="number_ID">
-                    <label type="number_ID" name="'number_ID"> 주민등록번호 </label>
-                    <input style="text-align: center;" type="text" name="'number_ID" maxlength="6" disabled
+                    <label type="number_ID" name="number_ID"> 주민등록번호 </label>
+                    <input style="text-align: center;" type="text" name="number_ID" maxlength="6" disabled
                         value="940321" />
                     <span>ㅡ</span>
-                    <input style="text-align: center;" type="text" name="'number_ID" maxlength="7" disabled
+                    <input style="text-align: center;" type="text" name="number_ID" maxlength="7" disabled
                         value="2147220" />
                 </div> -->
             </div>
@@ -99,22 +99,22 @@
 
         <script>
             //파라미터 가져오기
-            function get_query() {
-                var url = document.location.href;
-                var qs = url.substring(url.indexOf("?") + 1).split("&");
-                for (var i = 0, result = []; i < qs.length; i++) {
-                    qs[i] = qs[i].split("=");
-                    result.push(decodeURIComponent(qs[i][1]))
-                }
-                return result;
-            }
-            var result = get_query();
-            const lastname = result[0];
-            const fristname = result[1];
+            // function get_query() {
+            //     var url = document.location.href;
+            //     var qs = url.substring(url.indexOf("?") + 1).split("&");
+            //     for (var i = 0, result = []; i < qs.length; i++) {
+            //         qs[i] = qs[i].split("=");
+            //         result.push(decodeURIComponent(qs[i][1]))
+            //     }
+            //     return result;
+            // }
+            // var result = get_query();
+            const localvals = JSON.parse(localStorage.getItem('values'));
+            const result = `${localvals.firstname} ${localvals.lastname}`;
+            // const fristname = result[1];
 
-            console.log(result);
             const h1 = document.querySelector('.aftercheck h1');
-            result.length < 2 ? h1.innerHTML='Nice to meet you Jacob😊' :  h1.innerHTML = `Nice to meet you ${lastname+fristname}😊`;
+            result.length < 2 ? h1.innerHTML='Nice to meet you Jacob😊' :  h1.innerHTML = `Nice to meet you ${result}😊`;
 
             //도우미 호출 스크립트
             const open = () => {

@@ -92,7 +92,8 @@ h2 {
     justify-content: center;
     align-items: center;
     margin-top: 40px;
-	> label {
+	> h1 {
+		font-weight: 700;
 		color:black;
 	}
 }

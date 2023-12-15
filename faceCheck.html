@@ -16,8 +16,14 @@
 <body oncontextmenu="return false;">
     <!--안면인식 도와주는 버튼 ( 안면인식 후에는 보이지 않는 버튼. )-->
     <div class="beforeCheck">
-        <button><div>Facial<br> Recognition</div>
+        <button><div>Face<br> Recognition</div>
             <p class="icon">👩👨</p>
+        </button>
+    </div>
+    <div class="clickmeBox">
+        <h1>If you wish to avoid face recognition,</h1>
+        <button type="button" class="btn btn-primary">
+            <p>CLICK THIS!👆</p>
         </button>
     </div>
     <!-- 안면인식 체크 모달 -->
@@ -41,7 +47,7 @@
         </div>
     </div>
     <script>
-        //환자 확인버튼 클릭시 실행되는 함수
+        //얼굴인식 클릭시 실행되는 함수
         const open2 = () => {
             document.querySelector(".modal").classList.remove("hidden");
             setTimeout(() => (document.querySelector(".text-center").classList.add("hidden")), 5000);
@@ -56,8 +62,13 @@
             setTimeout(() => (document.querySelector(".container input").click()), 6000);
 
         };
-        // 환자확인 버튼 클릭 시 실행
+        // 얼굴인식 버튼 클릭 시 실행
         document.querySelector('.beforeCheck button').addEventListener('click', (event) => open2(event));
+
+        //얼굴인식 말고 직접 정보입력 페이지로 넘어가게 하는
+        document.querySelector('.btn').addEventListener('click',  e=> {
+            window.location.href=`userInfo.html?something`
+        })
 
     </script>
 

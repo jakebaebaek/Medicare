@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selectDept</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <style type="text/css">
+        @import url("./select.css");
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <span>Medicare-bot 001</span>
+            <img src="./pics/logo.png" />
+        </div>
+        <hr />
+    </header>
+    <img class="back" src="./pics/goBackIcon.png" />
+    <div class="text">
+        <h1>Choose the Dept <br> you want to know</h1>
+    </div>
+
+    <div class="slider">
+        <img class="arrow" src="./pics/upArrow.png" />
+        <div class="innerSlider">
+            <button data-navigate="./descs/Pediatrics" class=" btn btn-primary">Pediatrics</button>
+            <button data-navigate="./descs/Endocrinology" class=" btn btn-primary">Endocrinology</button>
+            <button data-navigate="./descs/Rheumatology" class=" btn btn-primary">Rheumatology</button>
+            <button data-navigate="./descs/Obstetrician" class=" btn btn-primary">Obstetrician</button>
+            <button data-navigate="./descs/Neurology" class=" btn btn-primary">Neurology</button>
+            <button data-navigate="./descs/Ophthalmology" class=" btn btn-primary">Ophthalmology</button>
+            <button data-navigate="./descs/Surgery" class=" btn btn-primary">Surgery</button>
+            <button data-navigate="./descs/Orthopedics" class=" btn btn-primary">Orthopedics</button>
+            <button data-navigate="./descs/Anesthesiology" class=" btn btn-primary">Anesthesiology</button>
+            <button data-navigate="./descs/Radiology" class=" btn btn-primary">Radiology</button>
+        </div>
+    </div>
+    <!-- <script type="module" src="routerIndex.js"></script> -->
+    <script type="module" src="select.js"></script>
+</body>
+
+</html>

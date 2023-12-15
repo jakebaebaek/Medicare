@@ -3,6 +3,7 @@ body {
   -moz-user-select: none;
   -ms-use-select: none;
   user-select: none;
+
 }
 .beforeCheck {
     display: flex;
@@ -26,8 +27,37 @@ body {
 .icon {
   font-size: 300px;
 }
-/* 모달 창 css */
+/* CLICK THIS button */
+.clickmeBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7%;
+    >h1 {
+      font-weight: 1000;
+      font-size: 50px;
+    }
+    >button {
+      display: flex;
+      margin-top: 20px;
+      width: 400px;
+      height: 130px;
+      font-size: 40px;
+      font-weight: 1000;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+      >p{
+        margin-bottom: 0;
+        margin-left: 10px;
+      }
+    }
+}
 
+
+
+/* 모달 창 css */
 .modal {
     position: absolute;
     top: 0;

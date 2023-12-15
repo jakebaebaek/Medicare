@@ -12,6 +12,7 @@
     </style>
 </head>
 <!-- oncontextmenu="return false;" -->
+
 <body>
     <div class="logo">
         <span>Medicare-bot 001</span>
@@ -25,68 +26,39 @@
             <div class="row clearfix">
                 <div class="">
                     <form action="vital.html">
-                    <!-- <form> -->
+                        <!-- <form> -->
                         <div class="row clearfix">
                             <div class="col_half">
                                 <div class="input">
                                     <label type="lastname" name="name"> Last name </label>
-                                    <input 
-                                        name="lastname" 
-                                        maxlength="12"
-                                        oninput="inputStringOnly(this)"
-                                        disabled 
-                                        required 
-                                    />
+                                    <input name="lastname" maxlength="12" oninput="inputStringOnly(this)" disabled
+                                        required />
                                 </div>
                             </div>
                             <p></p>
                             <div class="col_half">
                                 <div class="input_field">
                                     <label type="firstname" name="name"> First name</label>
-                                    <input 
-                                        name="firstname" 
-                                        maxlength="15"
-                                        oninput="inputStringOnly(this)"
-                                        disabled 
-                                        required 
-                                    />
+                                    <input name="firstname" maxlength="15" oninput="inputStringOnly(this)" disabled
+                                        required />
                                 </div>
                             </div>
                         </div>
                         <div class="input_field">
                             <label type="number_ID" name="number_ID"> ID number </label>
-                            <input 
-                                type="text" 
-                                name="FID" 
-                                oninput="inputNumberOnly(this)" 
-                                maxlength="6"
-                                disabled 
-                                required 
-                            />
+                            <input type="text" name="FID" oninput="inputNumberOnly(this)" maxlength="6" disabled
+                                required />
                             <span>ㅡ</span>
-                            <input 
-                                type="text" 
-                                name="BID" 
-                                oninput="inputNumberOnly(this)" 
-                                maxlength="7"
-                                disabled 
-                                required 
-                            />
+                            <input type="text" name="BID" oninput="inputNumberOnly(this)" maxlength="7" disabled
+                                required />
                         </div>
                         <div class="reservNum">
                             <label type="texts"> Patient Number </label>
-                            <input 
-                                type="text" 
-                                name="reservNum" 
-                                maxlength="15" 
-                                minlength="3"
-                                oninput="patientNumOnly(this)"  
-                                disabled 
-                                required
-                            />
+                            <input type="text" name="reservNum" maxlength="15" minlength="3"
+                                oninput="patientNumOnly(this)" disabled required />
                         </div>
                         <div class="infocheck">
-                            <label style="width: auto;" for="cb2">Does the above information match yours?</label>
+                            <h1 style="width: auto;">Does the information above match yours?</h1>
                         </div>
                         <div class="btns">
                             <button id="yes" style=" font-size: x-large;" class="btn btn-primary"> Yes <br>(Measuring)
@@ -100,8 +72,18 @@
         </div>
     </div>
     <script>
+        function get_query() {
+            var url = document.location.href;
+            let result = url.slice(-9)
+            return result;
+        }
+        var result = get_query();
+
+
+        const forms = document.querySelector('form');
+        const inputLists = document.querySelectorAll('input');
+                
         const localvals = JSON.parse(localStorage.getItem('values'));
-        console.log(localvals)
         document.getElementsByName('lastname')[0].value = localvals.lastname;
         document.getElementsByName('firstname')[0].value = localvals.firstname;
         document.getElementsByName('BID')[0].value = localvals.BID;
@@ -119,8 +101,9 @@
         }
         const inputs = document.querySelectorAll('input');
         const noBtn = document.querySelector('#no')
+
         noBtn.addEventListener('click', (event) => {
-            localStorage.clear();
+            // localStorage.clear();
             document.querySelectorAll('input').forEach((e) => e.disabled = false);
             document.querySelectorAll('input').forEach((e) => e.value = "");
             document.querySelectorAll('.btn').forEach((e) => e.style.display = 'none');
@@ -128,7 +111,7 @@
             submitBtn.setAttribute('class', 'btn btn-primary');
             submitBtn.setAttribute('style', 'font-size:25px;')
             submitBtn.innerHTML = 'Submit'
-            submitBtn.addEventListener('click', (e) => checkID(e) );
+            submitBtn.addEventListener('click', (e) => checkID(e));
             document.querySelector('.infocheck label').innerHTML = 'Please wirte down your information'
             document.querySelector('.btns').appendChild(submitBtn);
         }
@@ -137,17 +120,41 @@
         input.forEach((e) => {
             e.setAttribute('autocomplete', 'off');
         })
-        //주민등록번호와 환자번호 길이 유효성 검사
+        console.log(result.slice(-2))
+        //face recognition 에서 click this 로 들어온 환자들을 위해
+        result.slice(-2) == 'ng' ? noBtn.click() : null ;
+
+        //주민등록번호와 환자번호 길이 유효성 검사 및 로컬스토리지 수정
         function checkID(e) {
+            const lastname = document.getElementsByName('lastname');
+            const firstname = document.getElementsByName('firstname');
             const FID = document.getElementsByName('FID');
             const BID = document.getElementsByName('BID');
             const PN = document.getElementsByName('reservNum');
-            if(FID[0].value.length<6 | BID[0].value.length <7 | PN[0].value.length < 3){
+            if (FID[0].value.length < 6 | BID[0].value.length < 7 | PN[0].value.length < 3) {
                 e.preventDefault();
                 alert('주민등록번호 혹은 환자번호가 올바른지 확인해주세요.')
             }
         }
+        ///어떤 버튼을 누를 때나 input 값을 localStorage 에 저장하는 부분.
+        forms.addEventListener('submit', (e) => {
+            const lastname = inputLists[0].value;;
+            const firstname = inputLists[1].value;;
+            const FID = inputLists[2].value;;
+            const BID = inputLists[3].value;;
+            const PN = inputLists[4].value;;
 
+            const obj = {
+                'lastname': `${lastname}`,
+                'firstname': `${firstname}`,
+                'FID': `${FID}`,
+                'BID': `${BID}`,
+                'patientNumber': `${PN}`,
+            }
+            console.log(obj)
+            const localOBJ = JSON.stringify(obj)
+            localStorage.setItem('values',localOBJ)
+        })
     </script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
