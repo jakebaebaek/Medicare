@@ -8,33 +8,44 @@ const innerSld = document.querySelector('.innerSlider');
 let isPressed = false;
 let cursorY;
 
+//드래그 & 슬라이드 구현 
 slider.addEventListener("mousedown", (e) => {
+    e.preventDefault();
     isPressed = true;
     cursorY = e.clientY- cards.offsetTop;
     slider.style.cursor = "grabbing";
   });
-
-
-  slider.addEventListener("mouseup", () => {
-    slider.style.cursor = "grab";
-  });
+  slider.addEventListener("touchstart", (e) => {
+    // e.preventDefault();
+    isPressed = true;
+    console.log(e.touches)
+    cursorY = e.touches[0].clientY- cards.offsetTop;
+    slider.style.cursor = "grabbing";
+  },{passive:false});
   
-  window.addEventListener("mouseup", () => {
+  window.addEventListener("mouseup", (e) => {
     isPressed = false;
   });
+  window.addEventListener("touchend", (e) => {
+    isPressed = false;
+  });
+
   slider.addEventListener("mousemove", (e) => {
     if (!isPressed) return;
     e.preventDefault();
     e.stopPropagation();
     cards.style.top = `${e.clientY - cursorY}px`;
     boundSlides()
-    // console.log(
-    //   'e.clientY :',e.clientY, 
-    //   'cards.offsetTop :', cards.offsetTop,
-    //   'cards.style.top :',cards.style.top
-    //   )
   });
+  slider.addEventListener("touchmove", (e) => {
+    if (!isPressed) return;
+    e.preventDefault();
+    e.stopPropagation();
+    cards.style.top = `${e.touches[0].clientY - cursorY}px`;
+    boundSlides()
+  },{passive:false});
   
+
   function boundSlides() {
     //슬라이더 맨 위, 맨 아래에서 걸리게 하기.
     if (parseInt(cards.style.top) > 1100) {

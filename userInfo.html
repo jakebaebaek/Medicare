@@ -104,22 +104,23 @@
 
         noBtn.addEventListener('click', (event) => {
             // localStorage.clear();
-            document.querySelectorAll('input').forEach((e) => e.disabled = false);
-            document.querySelectorAll('input').forEach((e) => e.value = "");
+            document.querySelectorAll('input').forEach((e) => {e.disabled = false; e.value = "";});
+            // document.querySelectorAll('input').forEach((e) => e.value = "");
             document.querySelectorAll('.btn').forEach((e) => e.style.display = 'none');
             const submitBtn = document.createElement('button');
             submitBtn.setAttribute('class', 'btn btn-primary');
             submitBtn.setAttribute('style', 'font-size:25px;')
             submitBtn.innerHTML = 'Submit'
             submitBtn.addEventListener('click', (e) => checkID(e));
-            document.querySelector('.infocheck label').innerHTML = 'Please wirte down your information'
+            document.querySelector('.infocheck h1').innerHTML = 'Please wirte down your information'
             document.querySelector('.btns').appendChild(submitBtn);
+            
+            const input = document.querySelectorAll('input');
+            input.forEach((e) => {
+                e.setAttribute('autocomplete', 'off');
+            })
         }
         )
-        const input = document.querySelectorAll('input');
-        input.forEach((e) => {
-            e.setAttribute('autocomplete', 'off');
-        })
         console.log(result.slice(-2))
         //face recognition 에서 click this 로 들어온 환자들을 위해
         result.slice(-2) == 'ng' ? noBtn.click() : null ;

@@ -4,7 +4,6 @@ body {
     display: flex;
     justify-content: center;
     overflow: hidden;
-    animation: expand 0.3s linear forwards;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-use-select: none;
@@ -13,6 +12,8 @@ body {
 
 }
 .wrapper {
+    animation: expand 0.4s linear forwards;
+    animation-delay: -1ms;
     position: absolute;
     width:90%;
     height: 1550px;
@@ -36,7 +37,7 @@ body {
 .text::before {
     position: absolute;
     content: "";
-    background-image: url(./pics/inConsultation.jpg);
+    background-image: url(./pics/inConsultation.webp);
     background-repeat: no-repeat;
     background-size: cover;
     top: 0;

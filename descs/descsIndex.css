@@ -6,8 +6,6 @@ body {
     -ms-overflow-style: none;
     transform: translate3d(0, 0, 0); /* GPU 가속 활성화 */
     will-change: transform; /* 브라우저에 미리 알림 */
-    animation: expand 0.5s linear forwards;
-    animation-delay: -1ms;
 }
 body::before {
     background: #f3f3f3;
@@ -31,10 +29,10 @@ header {
         font-size: x-large;
     }
 }
-/* .wrapper {
-    animation: expand 0.4s linear forwards;
-
-} */
+.wrapper {
+    animation: expand 0.5s linear forwards;
+    animation-delay: -100ms;
+}
 .greets span {
     padding-top: 5px;
 }
