@@ -1,6 +1,14 @@
 {
   "dependencies": {
+    "@zoom/videosdk": "^1.10.8",
     "bootstrap": "^5.3.1",
     "simple-keyboard": "^3.6.40"
+  },
+  "devDependencies": {
+    "vite": "^5.1.5"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
   }
 }

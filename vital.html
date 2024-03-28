@@ -11,12 +11,16 @@
     <style type="text/css">
         @import url("./vital.css");
     </style>
+    <script type="module" src="./session.js"></script>
 </head>
 
 <body oncontextmenu="return false;"> 
     <div class="form_wrapper">
         <div class="pic_container">
-            <span class="aftercheck"><img src="pics/chatDoctor.jpg"></span>
+            <span class="aftercheck">
+                <video class="video"></video>
+                <button class="sessionStartBtn"> session start </button>
+            </span>
             <span class="aftercheck">
                 <p>
                     This is a revisit after 6 months.<br>
@@ -36,18 +40,6 @@
                 <h1></h1>
                 <button id="modal"> Need help?</button>
                 <hr id="bthr"></hr>
-                <!-- <div class="patientName">
-                    <label type="name" name=name"> 성명 </label>
-                    <input style="text-align: center;" type="name" name="name" value="김덕배" disabled />
-                </div> -->
-                <!-- <div class="number_ID">
-                    <label type="number_ID" name="number_ID"> 주민등록번호 </label>
-                    <input style="text-align: center;" type="text" name="number_ID" maxlength="6" disabled
-                        value="940321" />
-                    <span>ㅡ</span>
-                    <input style="text-align: center;" type="text" name="number_ID" maxlength="7" disabled
-                        value="2147220" />
-                </div> -->
             </div>
             <!-- 측정값이 페인팅 되는 부분 -->
             <div class="schedule aftercheck">
