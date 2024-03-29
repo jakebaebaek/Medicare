@@ -12,7 +12,7 @@ sessionStartBtn.addEventListener('click', function() {
 async function fetchToken(SessionName) {
     try {
       // 서버 엔드포인트에게 JWT 토큰을 요청합니다. - request
-      const response = await fetch("http://localhost:4000", {
+      const response = await fetch("https://enigmatic-garden-56462-8b6392dd24e0.herokuapp.com/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",  
@@ -21,10 +21,10 @@ async function fetchToken(SessionName) {
           sessionName: SessionName,
           role: 0,
           sessionKey: "session123",
-          userIdentity: "user123",
+          userIdentity: "HELLO I AM CLIENT",
         }),
       });
-      console.log(response.payload)
+      console.log(response)
       // JSON으로 파싱
       const data = await response.json();
   
@@ -53,15 +53,29 @@ async function joinSession() {
         // 세션 참여
         await zoomVideo.join(sessionName, token, 'sdf').then(() => {
             stream = zoomVideo.getMediaStream()
-        }).catch((error) => {
+            zoomVideo.getAllUser().forEach(async (user) => {
+              if (user.bVideoOn) {
+                let userVideo = await stream.attachVideo(user.userId, 3)
+            
+                document.querySelector('video-player-container').appendChild(userVideo)
+              }
+            })        
+          }).catch((error) => {
             console.log(error)
         });
 
         // 비디오 및 오디오 스트림 시작
-        stream.startVideo().then(() => {
-            stream.renderVideo(video, zoomVideo.getCurrentUserInfo().userId, 2580, 1080, 10, 10, 10)
+        stream.startVideo({ hd:true }).then(() => {
+            stream.renderVideo(video, zoomVideo.getCurrentUserInfo().userId, 2580, 1080, 10, 10, 3)
         }).then(() => stream.startAudio());        
 
+        stream.subscribeVideoStatisticData()
+
+        // zoomVideo.on('video-statistic-data-change', (payload) => {
+        //   console.log(payload.height)
+        // })
+        const infos = zoomVideo.getAllUser();
+        console.log(infos)
     } catch (error) {
         console.error('Joining session failed', error);
     }
