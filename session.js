@@ -12,7 +12,7 @@ sessionStartBtn.addEventListener('click', function() {
 async function fetchToken(SessionName) {
     try {
       // 서버 엔드포인트에게 JWT 토큰을 요청합니다. - request
-      const response = await fetch("https://enigmatic-garden-56462-8b6392dd24e0.herokuapp.com/", {
+      const response = await fetch("http://localhost:4000/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",  
